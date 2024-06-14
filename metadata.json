@@ -3,7 +3,7 @@
     {
       "name": "Background Message Forwarder",
       "description": "Forward messages from popup to active content scripts.",
-      "searchText": "Background Message Forwarder|Forward messages from popup to active content scripts.",
+      "searchText": "Background Message Forwarder|Forward messages from popup to active content scripts.|browser.runtime.onMessage|browser.tabs.query|browser.tabs.sendMessage|browser.runtime.sendMessage",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/background-message-forwarder"
     },
     {
@@ -18,5 +18,10 @@
     "@wxt-dev/module-vue"
   ],
   "allPermissions": [],
-  "allApis": []
+  "allApis": [
+    "browser.runtime.onMessage",
+    "browser.tabs.query",
+    "browser.tabs.sendMessage",
+    "browser.runtime.sendMessage"
+  ]
 }

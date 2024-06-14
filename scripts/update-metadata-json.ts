@@ -2,6 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { execSync } from "node:child_process";
 import { consola } from "consola";
 import YAML from "yaml";
+import glob from "fast-glob";
 
 interface MetadataJson {
   examples: Array<{
@@ -55,8 +56,29 @@ function collectPackages(packageJson: any) {
   return packages;
 }
 
-async function collectApis(_exampleDir: string) {
-  return [];
+async function collectApis(exampleDir: string) {
+  async function detectApisInFile(file: string) {
+    const textContent = await readFile(file, "utf8");
+    const apis = new Set<string>();
+    [...textContent.matchAll(/((browser|chrome)\..*?)[\s(]/gm)].forEach(
+      (match) => {
+        apis.add(match[1].replace(".addListener", ""));
+      },
+    );
+    return [...apis];
+  }
+  const files = await glob(`${exampleDir}/**`, {
+    ignore: ["**/node_modules/**", "**/package.json"],
+  });
+  const dirApis = new Set();
+  for (const file of files) {
+    const apis = await detectApisInFile(file);
+    apis.forEach((api) => {
+      dirApis.add(api);
+      allApis.add(api);
+    });
+  }
+  return [...dirApis];
 }
 
 function extractFrontmatter(readmeText: string): any {
@@ -95,6 +117,7 @@ for (const exampleDir of exampleDirs) {
   const packages = collectPackages(packageJson);
   const permissions = collectPermissions(manifest);
   const apis = await collectApis(exampleDir);
+  console.log({ apis, allApis });
   examples.push({
     name,
     description,
@@ -111,9 +134,9 @@ for (const exampleDir of exampleDirs) {
 
 const metadataJson: MetadataJson = {
   examples,
-  allPackages: [...allPackages.values()],
-  allPermissions: [...allPermissions.values()],
-  allApis: [...allApis.values()],
+  allPackages: [...allPackages],
+  allPermissions: [...allPermissions],
+  allApis: [...allApis],
 };
 
 consola.info(`Writing ${examples.length} examples to \`metadata.json\`...`);
