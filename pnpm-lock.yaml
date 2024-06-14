@@ -8,6 +8,15 @@ importers:
 
   .: {}
 
+  examples/background-message-forwarder:
+    devDependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      wxt:
+        specifier: ^0.18.6
+        version: 0.18.6
+
   examples/vue-overlay:
     dependencies:
       vue:
