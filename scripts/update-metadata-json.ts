@@ -133,9 +133,9 @@ for (const exampleDir of exampleDirs) {
 
 const metadataJson: MetadataJson = {
   examples,
-  allPackages: [...allPackages],
-  allPermissions: [...allPermissions],
-  allApis: [...allApis],
+  allPackages: [...allPackages].sort(),
+  allPermissions: [...allPermissions].sort(),
+  allApis: [...allApis].sort(),
 };
 
 consola.info(`Writing ${examples.length} examples to \`metadata.json\`...`);

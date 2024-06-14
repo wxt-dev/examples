@@ -7,6 +7,12 @@
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/background-message-forwarder"
     },
     {
+      "name": "Get Started Page",
+      "description": "Open a unlisted HTML page when the extension is installed.",
+      "searchText": "Get Started Page|Open a unlisted HTML page when the extension is installed.|tabs|browser.runtime.onInstalled|browser.tabs.create|browser.runtime.getURL",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/get-started-page"
+    },
+    {
       "name": "Vue Overlay",
       "description": "Show a simple overlay in the top right corner of every website.",
       "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
@@ -14,14 +20,19 @@
     }
   ],
   "allPackages": [
-    "vue",
-    "@wxt-dev/module-vue"
+    "@wxt-dev/module-vue",
+    "vue"
   ],
-  "allPermissions": [],
+  "allPermissions": [
+    "tabs"
+  ],
   "allApis": [
+    "browser.runtime.getURL",
+    "browser.runtime.onInstalled",
     "browser.runtime.onMessage",
+    "browser.runtime.sendMessage",
+    "browser.tabs.create",
     "browser.tabs.query",
-    "browser.tabs.sendMessage",
-    "browser.runtime.sendMessage"
+    "browser.tabs.sendMessage"
   ]
 }
