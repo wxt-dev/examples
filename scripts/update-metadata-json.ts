@@ -117,7 +117,6 @@ for (const exampleDir of exampleDirs) {
   const packages = collectPackages(packageJson);
   const permissions = collectPermissions(manifest);
   const apis = await collectApis(exampleDir);
-  console.log({ apis, allApis });
   examples.push({
     name,
     description,
