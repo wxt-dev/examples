@@ -1,3 +1,14 @@
 {
-  "packageManager": "pnpm@8.15.8"
+  "type": "module",
+  "packageManager": "pnpm@8.15.8",
+  "scripts": {
+    "update-metadata": "tsx scripts/update-metadata-json.ts"
+  },
+  "devDependencies": {
+    "consola": "^3.2.3",
+    "prettier": "^3.3.2",
+    "tsx": "^4.15.4",
+    "typescript": "^5.4.5",
+    "yaml": "^2.4.5"
+  }
 }

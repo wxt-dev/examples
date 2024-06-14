@@ -1,0 +1,22 @@
+{
+  "examples": [
+    {
+      "name": "Background Message Forwarder",
+      "description": "Forward messages from popup to active content scripts.",
+      "searchText": "Background Message Forwarder|Forward messages from popup to active content scripts.",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/background-message-forwarder"
+    },
+    {
+      "name": "Vue Overlay",
+      "description": "Show a simple overlay in the top right corner of every website.",
+      "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/vue-overlay"
+    }
+  ],
+  "allPackages": [
+    "vue",
+    "@wxt-dev/module-vue"
+  ],
+  "allPermissions": [],
+  "allApis": []
+}
