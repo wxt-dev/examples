@@ -13,6 +13,12 @@
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/get-started-page"
     },
     {
+      "name": "React Mantine",
+      "description": "Add mantine to HTML pages and content scripts",
+      "searchText": "React Mantine|Add mantine to HTML pages and content scripts|@mantine/core|react|react-dom|@wxt-dev/module-react|postcss|postcss-preset-mantine|postcss-simple-vars|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-mantine"
+    },
+    {
       "name": "Vue Overlay",
       "description": "Show a simple overlay in the top right corner of every website.",
       "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
@@ -20,7 +26,14 @@
     }
   ],
   "allPackages": [
+    "@mantine/core",
+    "@wxt-dev/module-react",
     "@wxt-dev/module-vue",
+    "postcss",
+    "postcss-preset-mantine",
+    "postcss-simple-vars",
+    "react",
+    "react-dom",
     "vue"
   ],
   "allPermissions": [
@@ -28,6 +41,7 @@
   ],
   "allApis": [
     "browser.runtime.getURL",
+    "browser.runtime.id",
     "browser.runtime.onInstalled",
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
