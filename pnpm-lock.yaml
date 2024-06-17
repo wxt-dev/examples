@@ -36,6 +36,15 @@ importers:
         specifier: ^0.18.6
         version: 0.18.6
 
+  examples/content-script-session-storage:
+    devDependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      wxt:
+        specifier: ^0.18.6
+        version: 0.18.6
+
   examples/get-started-page:
     devDependencies:
       typescript:
