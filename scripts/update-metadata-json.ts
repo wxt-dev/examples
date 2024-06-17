@@ -31,6 +31,8 @@ const ignoredPackages = new Set([
 ]);
 const ignoredPackagePrefixes = ["@types"];
 
+const includedBundleImports = ["wxt/storage"];
+
 consola.info("Building all extensions...");
 execSync(`pnpm -r build`);
 
@@ -43,7 +45,7 @@ function collectPermissions(manifest: any) {
   return permissions;
 }
 
-function collectPackages(packageJson: any, _files: Record<string, string>) {
+function collectPackages(packageJson: any, files: Record<string, string>) {
   const packages = [
     ...Object.keys(packageJson.dependencies ?? {}),
     ...Object.keys(packageJson.devDependencies ?? {}),
@@ -52,6 +54,14 @@ function collectPackages(packageJson: any, _files: Record<string, string>) {
       !ignoredPackages.has(pkg) &&
       !ignoredPackagePrefixes.some((prefix) => pkg.startsWith(prefix)),
   );
+  Object.values(files).forEach((file) => {
+    includedBundleImports.forEach((bundleImport) => {
+      const bundleImportMatch = `from "${bundleImport}"`;
+      if (file.includes(bundleImportMatch)) {
+        packages.push(bundleImport);
+      }
+    });
+  });
   packages.forEach((pkg) => allPackages.add(pkg));
   return packages;
 }
