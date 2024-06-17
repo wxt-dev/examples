@@ -7,6 +7,12 @@
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/background-message-forwarder"
     },
     {
+      "name": "Content Script Session Storage",
+      "description": "Setup and use session storage in content scripts.",
+      "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|storage|browser.storage.session.setAccessLevel",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/content-script-session-storage"
+    },
+    {
       "name": "Get Started Page",
       "description": "Open a unlisted HTML page when the extension is installed.",
       "searchText": "Get Started Page|Open a unlisted HTML page when the extension is installed.|tabs|browser.runtime.onInstalled|browser.tabs.create|browser.runtime.getURL",
@@ -37,6 +43,7 @@
     "vue"
   ],
   "allPermissions": [
+    "storage",
     "tabs"
   ],
   "allApis": [
@@ -45,6 +52,7 @@
     "browser.runtime.onInstalled",
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
+    "browser.storage.session.setAccessLevel",
     "browser.tabs.create",
     "browser.tabs.query",
     "browser.tabs.sendMessage"

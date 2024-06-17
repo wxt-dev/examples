@@ -43,7 +43,7 @@ function collectPermissions(manifest: any) {
   return permissions;
 }
 
-function collectPackages(packageJson: any) {
+function collectPackages(packageJson: any, _files: Record<string, string>) {
   const packages = [
     ...Object.keys(packageJson.dependencies ?? {}),
     ...Object.keys(packageJson.devDependencies ?? {}),
@@ -56,23 +56,26 @@ function collectPackages(packageJson: any) {
   return packages;
 }
 
-async function collectApis(exampleDir: string) {
-  async function detectApisInFile(file: string) {
-    const textContent = await readFile(file, "utf8");
-    const apis = new Set<string>();
-    [...textContent.matchAll(/((browser|chrome)\..*?)[\s(]/gm)].forEach(
-      (match) => {
-        apis.add(match[1].replace(".addListener", ""));
-      },
-    );
-    return [...apis];
-  }
-  const files = await glob(`${exampleDir}/**`, {
+async function readFilesInDir(dir: string): Promise<Record<string, string>> {
+  const files = await glob(`${dir}/**`, {
     ignore: ["**/node_modules/**", "**/package.json"],
   });
-  const dirApis = new Set();
+  const result: Record<string, string> = {};
   for (const file of files) {
-    const apis = await detectApisInFile(file);
+    result[file] = await readFile(file, "utf8");
+  }
+  return result;
+}
+
+async function collectApis(files: Record<string, string>) {
+  const dirApis = new Set();
+  for (const textContent of Object.values(files)) {
+    const apis = new Set<string>();
+    [...textContent.matchAll(/\s((browser|chrome)\..*?)[\s(]/gm)].forEach(
+      (match) => {
+        apis.add(match[1].replace(".addListener", "").replace("?.", ""));
+      },
+    );
     apis.forEach((api) => {
       dirApis.add(api);
       allApis.add(api);
@@ -114,9 +117,10 @@ for (const exampleDir of exampleDirs) {
   const manifest = JSON.parse(manifestText);
 
   const { name, description } = extractFrontmatter(readmeText);
-  const packages = collectPackages(packageJson);
+  const dirContent = await readFilesInDir(exampleDir);
+  const packages = collectPackages(packageJson, dirContent);
   const permissions = collectPermissions(manifest);
-  const apis = await collectApis(exampleDir);
+  const apis = await collectApis(dirContent);
   examples.push({
     name,
     description,
