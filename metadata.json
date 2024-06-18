@@ -4,37 +4,94 @@
       "name": "Background Message Forwarder",
       "description": "Forward messages from popup to active content scripts.",
       "searchText": "Background Message Forwarder|Forward messages from popup to active content scripts.|browser.runtime.onMessage|browser.tabs.query|browser.tabs.sendMessage|browser.runtime.sendMessage",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/background-message-forwarder"
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/background-message-forwarder",
+      "apis": [
+        "browser.runtime.onMessage",
+        "browser.tabs.query",
+        "browser.tabs.sendMessage",
+        "browser.runtime.sendMessage"
+      ],
+      "packages": [],
+      "permissions": []
     },
     {
       "name": "Content Script Session Storage",
       "description": "Setup and use session storage in content scripts.",
       "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|wxt/storage|storage|browser.storage.session.setAccessLevel",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/content-script-session-storage"
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/content-script-session-storage",
+      "apis": [
+        "browser.storage.session.setAccessLevel"
+      ],
+      "packages": [
+        "wxt/storage"
+      ],
+      "permissions": [
+        "storage"
+      ]
     },
     {
       "name": "Favicon Tracker",
       "description": "Track and save favicons for all the websites you've been to.",
-      "searchText": "Favicon Tracker|Track and save favicons for all the websites you've been to.|@webext-core/proxy-service|idb|tabs|browser.tabs.onUpdated|browser.tabs.get",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/favicon-tracker"
+      "searchText": "Favicon Tracker|Track and save favicons for all the websites you've been to.|@webext-core/proxy-service|idb|tabs|browser.tabs.onUpdated|browser.tabs.get|indexeddb",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/favicon-tracker",
+      "apis": [
+        "browser.tabs.onUpdated",
+        "browser.tabs.get",
+        "indexeddb"
+      ],
+      "packages": [
+        "@webext-core/proxy-service",
+        "idb"
+      ],
+      "permissions": [
+        "tabs"
+      ]
     },
     {
       "name": "Get Started Page",
       "description": "Open a unlisted HTML page when the extension is installed.",
       "searchText": "Get Started Page|Open a unlisted HTML page when the extension is installed.|tabs|browser.runtime.onInstalled|browser.tabs.create|browser.runtime.getURL",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/get-started-page"
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/get-started-page",
+      "apis": [
+        "browser.runtime.onInstalled",
+        "browser.tabs.create",
+        "browser.runtime.getURL"
+      ],
+      "packages": [],
+      "permissions": [
+        "tabs"
+      ]
     },
     {
       "name": "React Mantine",
       "description": "Add mantine to HTML pages and content scripts",
       "searchText": "React Mantine|Add mantine to HTML pages and content scripts|@mantine/core|react|react-dom|@wxt-dev/module-react|postcss|postcss-preset-mantine|postcss-simple-vars|browser.runtime.id",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-mantine"
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-mantine",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "@mantine/core",
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react",
+        "postcss",
+        "postcss-preset-mantine",
+        "postcss-simple-vars"
+      ],
+      "permissions": []
     },
     {
       "name": "Vue Overlay",
       "description": "Show a simple overlay in the top right corner of every website.",
       "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/vue-overlay"
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/vue-overlay",
+      "apis": [],
+      "packages": [
+        "vue",
+        "@wxt-dev/module-vue"
+      ],
+      "permissions": []
     }
   ],
   "allPackages": [
@@ -66,6 +123,7 @@
     "browser.tabs.get",
     "browser.tabs.onUpdated",
     "browser.tabs.query",
-    "browser.tabs.sendMessage"
+    "browser.tabs.sendMessage",
+    "indexeddb"
   ]
 }

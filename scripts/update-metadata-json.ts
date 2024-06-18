@@ -10,6 +10,9 @@ interface MetadataJson {
     description?: string;
     url: string;
     searchText: string;
+    apis: string[];
+    packages: string[];
+    permissions: string[];
   }>;
   allPackages: string[];
   allPermissions: string[];
@@ -78,7 +81,7 @@ async function readFilesInDir(dir: string): Promise<Record<string, string>> {
 }
 
 async function collectApis(files: Record<string, string>) {
-  const dirApis = new Set();
+  const dirApis = new Set<string>();
   for (const textContent of Object.values(files)) {
     const apis = new Set<string>();
     [...textContent.matchAll(/\s((browser|chrome)\..*?)[\s(]/gm)].forEach(
@@ -126,22 +129,30 @@ for (const exampleDir of exampleDirs) {
   }
   const manifest = JSON.parse(manifestText);
 
-  const { name, description } = extractFrontmatter(readmeText);
+  const frontmatter = extractFrontmatter(readmeText);
   const dirContent = await readFilesInDir(exampleDir);
   const packages = collectPackages(packageJson, dirContent);
   const permissions = collectPermissions(manifest);
   const apis = await collectApis(dirContent);
+  frontmatter.apis?.forEach((api: string) => {
+    allApis.add(api);
+    apis.push(api);
+  });
+
   examples.push({
-    name,
-    description,
+    name: frontmatter.name,
+    description: frontmatter.description,
     searchText: [
-      name,
-      description ?? "",
+      frontmatter.name,
+      frontmatter.description ?? "",
       ...packages,
       ...permissions,
       ...apis,
     ].join("|"),
     url: `https://github.com/wxt-dev/examples/tree/main/${exampleDir}`,
+    apis,
+    packages,
+    permissions,
   });
 }
 
