@@ -13,6 +13,12 @@
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/content-script-session-storage"
     },
     {
+      "name": "Favicon Tracker",
+      "description": "Track and save favicons for all the websites you've been to.",
+      "searchText": "Favicon Tracker|Track and save favicons for all the websites you've been to.|@webext-core/proxy-service|idb|tabs|browser.tabs.onUpdated|browser.tabs.get",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/favicon-tracker"
+    },
+    {
       "name": "Get Started Page",
       "description": "Open a unlisted HTML page when the extension is installed.",
       "searchText": "Get Started Page|Open a unlisted HTML page when the extension is installed.|tabs|browser.runtime.onInstalled|browser.tabs.create|browser.runtime.getURL",
@@ -33,8 +39,10 @@
   ],
   "allPackages": [
     "@mantine/core",
+    "@webext-core/proxy-service",
     "@wxt-dev/module-react",
     "@wxt-dev/module-vue",
+    "idb",
     "postcss",
     "postcss-preset-mantine",
     "postcss-simple-vars",
@@ -55,6 +63,8 @@
     "browser.runtime.sendMessage",
     "browser.storage.session.setAccessLevel",
     "browser.tabs.create",
+    "browser.tabs.get",
+    "browser.tabs.onUpdated",
     "browser.tabs.query",
     "browser.tabs.sendMessage"
   ]

@@ -1,0 +1,38 @@
+/* Reset */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+body {
+  background-color: #202428;
+  color: white;
+  width: 300px;
+  height: 300px;
+  padding: 16px;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+  justify-content: start;
+  gap: 16px;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  box-sizing: border-box;
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+img:hover {
+  background-color: black;
+}

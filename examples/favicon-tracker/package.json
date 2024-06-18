@@ -1,0 +1,24 @@
+{
+  "name": "favicon-tracker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@webext-core/proxy-service": "^1.2.0",
+    "idb": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "wxt": "^0.18.7"
+  }
+}
