@@ -86,7 +86,17 @@ async function collectApis(files: Record<string, string>) {
     const apis = new Set<string>();
     [...textContent.matchAll(/\s((browser|chrome)\..*?)[\s(]/gm)].forEach(
       (match) => {
-        apis.add(match[1].replace(".addListener", "").replace("?.", ""));
+        apis.add(
+          match[1]
+            // convert chrome APIs to be reported as browser
+            .replace("chrome", "browser")
+            // Remove any optional chaining from the API listing
+            .replace("?.", ".")
+            // Remove listeners for a cleaner API listing
+            .replace(".addListener", "")
+            // Trim any trailing dots
+            .replace(/\.$/, ""),
+        );
       },
     );
     apis.forEach((api) => {
@@ -137,6 +147,14 @@ for (const exampleDir of exampleDirs) {
   frontmatter.apis?.forEach((api: string) => {
     allApis.add(api);
     apis.push(api);
+  });
+  frontmatter.packages?.forEach((pkg: string) => {
+    allPackages.add(pkg);
+    packages.push(pkg);
+  });
+  frontmatter.permissions?.forEach((permission: string) => {
+    allPermissions.add(permission);
+    permissions.push(permission);
   });
 
   examples.push({

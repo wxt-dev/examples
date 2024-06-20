@@ -50,7 +50,7 @@
     {
       "name": "Get Started Page",
       "description": "Open a unlisted HTML page when the extension is installed.",
-      "searchText": "Get Started Page|Open a unlisted HTML page when the extension is installed.|tabs|browser.runtime.onInstalled|browser.tabs.create|browser.runtime.getURL",
+      "searchText": "Get Started Page|Open a unlisted HTML page when the extension is installed.|browser.runtime.onInstalled|browser.tabs.create|browser.runtime.getURL",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/get-started-page",
       "apis": [
         "browser.runtime.onInstalled",
@@ -58,9 +58,7 @@
         "browser.runtime.getURL"
       ],
       "packages": [],
-      "permissions": [
-        "tabs"
-      ]
+      "permissions": []
     },
     {
       "name": "React Mantine",
@@ -82,6 +80,19 @@
       "permissions": []
     },
     {
+      "name": "Use Chrome",
+      "description": "Use the chrome global and disable the webextension-polyfill.",
+      "searchText": "Use Chrome|Use the chrome global and disable the webextension-polyfill.|@types/chrome|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/use-chrome",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "@types/chrome"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Vue Overlay",
       "description": "Show a simple overlay in the top right corner of every website.",
       "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
@@ -96,6 +107,7 @@
   ],
   "allPackages": [
     "@mantine/core",
+    "@types/chrome",
     "@webext-core/proxy-service",
     "@wxt-dev/module-react",
     "@wxt-dev/module-vue",
