@@ -30,6 +30,25 @@
       ]
     },
     {
+      "name": "Dynamic Content Scripts",
+      "description": "Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.",
+      "searchText": "Dynamic Content Scripts|Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.|webext-dynamic-content-scripts|webext-permission-toggle|storage|scripting|activeTab|contextMenus|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/dynamic-content-scripts",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "webext-dynamic-content-scripts",
+        "webext-permission-toggle"
+      ],
+      "permissions": [
+        "storage",
+        "scripting",
+        "activeTab",
+        "contextMenus"
+      ]
+    },
+    {
       "name": "Favicon Tracker",
       "description": "Track and save favicons for all the websites you've been to.",
       "searchText": "Favicon Tracker|Track and save favicons for all the websites you've been to.|@webext-core/proxy-service|idb|tabs|browser.tabs.onUpdated|browser.tabs.get|indexeddb",
@@ -118,9 +137,14 @@
     "react",
     "react-dom",
     "vue",
+    "webext-dynamic-content-scripts",
+    "webext-permission-toggle",
     "wxt/storage"
   ],
   "allPermissions": [
+    "activeTab",
+    "contextMenus",
+    "scripting",
     "storage",
     "tabs"
   ],
