@@ -112,6 +112,19 @@
       "permissions": []
     },
     {
+      "name": "Vitest Unit Testing",
+      "description": "Setup unit tests and mock the browser APIs.",
+      "searchText": "Vitest Unit Testing|Setup unit tests and mock the browser APIs.|vitest|browser.runtime.onInstalled",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/vitest-unit-testing",
+      "apis": [
+        "browser.runtime.onInstalled"
+      ],
+      "packages": [
+        "vitest"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Vue Overlay",
       "description": "Show a simple overlay in the top right corner of every website.",
       "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
@@ -136,6 +149,7 @@
     "postcss-simple-vars",
     "react",
     "react-dom",
+    "vitest",
     "vue",
     "webext-dynamic-content-scripts",
     "webext-permission-toggle",
