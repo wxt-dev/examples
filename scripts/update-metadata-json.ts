@@ -84,10 +84,10 @@ async function collectApis(files: Record<string, string>) {
   const dirApis = new Set<string>();
   for (const textContent of Object.values(files)) {
     const apis = new Set<string>();
-    [...textContent.matchAll(/\s((browser|chrome)\..*?)[\s(]/gm)].forEach(
+    [...textContent.matchAll(/(^|\s)((browser|chrome)\..*?)[\s(]/gm)].forEach(
       (match) => {
         apis.add(
-          match[1]
+          match[2]
             // convert chrome APIs to be reported as browser
             .replace("chrome", "browser")
             // Remove any optional chaining from the API listing

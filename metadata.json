@@ -30,6 +30,18 @@
       ]
     },
     {
+      "name": "Devtools Extension",
+      "description": "Create an extension that adds to the browser's devtools.",
+      "searchText": "Devtools Extension|Create an extension that adds to the browser's devtools.|browser.devtools.panels.create|browser.devtools.panels.elements",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/devtools-extension",
+      "apis": [
+        "browser.devtools.panels.create",
+        "browser.devtools.panels.elements"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Dynamic Content Scripts",
       "description": "Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.",
       "searchText": "Dynamic Content Scripts|Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.|webext-dynamic-content-scripts|webext-permission-toggle|storage|scripting|activeTab|contextMenus|browser.runtime.id",
@@ -90,6 +102,21 @@
       "packages": [
         "@playwright/test",
         "playwright"
+      ],
+      "permissions": []
+    },
+    {
+      "name": "React Content Script UI",
+      "description": "Basic example of using createShadowRootUi with React.",
+      "searchText": "React Content Script UI|Basic example of using createShadowRootUi with React.|react|react-dom|@wxt-dev/module-react|createShadowRootUi",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-content-script-ui",
+      "apis": [
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
       ],
       "permissions": []
     },
@@ -194,6 +221,8 @@
     "tabs"
   ],
   "allApis": [
+    "browser.devtools.panels.create",
+    "browser.devtools.panels.elements",
     "browser.runtime.getURL",
     "browser.runtime.id",
     "browser.runtime.onInstalled",
@@ -205,6 +234,7 @@
     "browser.tabs.onUpdated",
     "browser.tabs.query",
     "browser.tabs.sendMessage",
+    "createShadowRootUi",
     "indexeddb"
   ]
 }
