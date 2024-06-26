@@ -1,0 +1,19 @@
+{
+  "name": "wxt-starter",
+  "description": "manifest.json description",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "postinstall": "wxt prepare",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "playwright": "^1.40.1",
+    "typescript": "^5.3.3",
+    "wxt": "^0.18.6"
+  }
+}
