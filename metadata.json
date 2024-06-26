@@ -80,6 +80,20 @@
       "permissions": []
     },
     {
+      "name": "Playwright E2e Testing",
+      "description": "Setup end-to-end tests for an extension.",
+      "searchText": "Playwright E2e Testing|Setup end-to-end tests for an extension.|@playwright/test|playwright|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/playwright-e2e-testing",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "@playwright/test",
+        "playwright"
+      ],
+      "permissions": []
+    },
+    {
       "name": "React Mantine",
       "description": "Add mantine to HTML pages and content scripts",
       "searchText": "React Mantine|Add mantine to HTML pages and content scripts|@mantine/core|react|react-dom|@wxt-dev/module-react|postcss|postcss-preset-mantine|postcss-simple-vars|browser.runtime.id",
@@ -139,11 +153,13 @@
   ],
   "allPackages": [
     "@mantine/core",
+    "@playwright/test",
     "@types/chrome",
     "@webext-core/proxy-service",
     "@wxt-dev/module-react",
     "@wxt-dev/module-vue",
     "idb",
+    "playwright",
     "postcss",
     "postcss-preset-mantine",
     "postcss-simple-vars",
