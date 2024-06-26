@@ -92,6 +92,20 @@
       "permissions": []
     },
     {
+      "name": "Messaging",
+      "description": "Send one-time messages or connect to long-lived ports.",
+      "searchText": "Messaging|Send one-time messages or connect to long-lived ports.|browser.runtime.onMessage|browser.runtime.onConnect|browser.runtime.sendMessage|browser.runtime.connect",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/messaging",
+      "apis": [
+        "browser.runtime.onMessage",
+        "browser.runtime.onConnect",
+        "browser.runtime.sendMessage",
+        "browser.runtime.connect"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Playwright E2e Testing",
       "description": "Setup end-to-end tests for an extension.",
       "searchText": "Playwright E2e Testing|Setup end-to-end tests for an extension.|@playwright/test|playwright|browser.runtime.id",
@@ -223,8 +237,10 @@
   "allApis": [
     "browser.devtools.panels.create",
     "browser.devtools.panels.elements",
+    "browser.runtime.connect",
     "browser.runtime.getURL",
     "browser.runtime.id",
+    "browser.runtime.onConnect",
     "browser.runtime.onInstalled",
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
