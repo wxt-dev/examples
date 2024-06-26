@@ -113,6 +113,19 @@
       "permissions": []
     },
     {
+      "name": "TailwindCSS",
+      "description": "Add TailwindCSS to your extension.",
+      "searchText": "TailwindCSS|Add TailwindCSS to your extension.|autoprefixer|postcss|tailwindcss",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/tailwindcss",
+      "apis": [],
+      "packages": [
+        "autoprefixer",
+        "postcss",
+        "tailwindcss"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Use Chrome",
       "description": "Use the chrome global and disable the webextension-polyfill.",
       "searchText": "Use Chrome|Use the chrome global and disable the webextension-polyfill.|@types/chrome|browser.runtime.id",
@@ -158,6 +171,7 @@
     "@webext-core/proxy-service",
     "@wxt-dev/module-react",
     "@wxt-dev/module-vue",
+    "autoprefixer",
     "idb",
     "playwright",
     "postcss",
@@ -165,6 +179,7 @@
     "postcss-simple-vars",
     "react",
     "react-dom",
+    "tailwindcss",
     "vitest",
     "vue",
     "webext-dynamic-content-scripts",
