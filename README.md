@@ -17,8 +17,10 @@ Want to create an example? Please do! Keep in mind that examples should be minim
 
 The README needs to contain frontmatter, which is used to generate the `metadata.json` file. This file's raw contents is used by https://wxt.dev to create a [nice example search UI](https://wxt.dev/examples.html).
 
-The `metadata.json` file is updated automatically when a commit is sent to the `main` branch. So you don't have to worry about updating it manually. But if you want to review the contents to make sure it will look good, run:
+Before merging your PR, please update the `metadata.json` file by running the below command:
 
 ```sh
 pnpm -w update-metadata
 ```
+
+Review that the changes to the file look good, and you're good to merge :+1:
