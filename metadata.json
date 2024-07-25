@@ -3,13 +3,12 @@
     {
       "name": "Active Tab Screenshot",
       "description": "Use the activeTab permission to take a screenshot of the current tab",
-      "searchText": "Active Tab Screenshot|Use the activeTab permission to take a screenshot of the current tab|activeTab|downloads|browser.action.onClicked|browser.browserAction.onClicked|browser.tabs.captureVisibleTab|browser.runtime.getManifest|browser.downloads.download",
+      "searchText": "Active Tab Screenshot|Use the activeTab permission to take a screenshot of the current tab|activeTab|downloads|browser.action.onClicked|browser.browserAction.onClicked|browser.tabs.captureVisibleTab|browser.downloads.download",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/active-tab-screenshot",
       "apis": [
         "browser.action.onClicked",
         "browser.browserAction.onClicked",
         "browser.tabs.captureVisibleTab",
-        "browser.runtime.getManifest",
         "browser.downloads.download"
       ],
       "packages": [],
@@ -260,7 +259,6 @@
     "browser.devtools.panels.elements",
     "browser.downloads.download",
     "browser.runtime.connect",
-    "browser.runtime.getManifest",
     "browser.runtime.getURL",
     "browser.runtime.id",
     "browser.runtime.onConnect",
