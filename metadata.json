@@ -1,6 +1,23 @@
 {
   "examples": [
     {
+      "name": "Active Tab Screenshot",
+      "description": "Use the activeTab permission to take a screenshot of the current tab",
+      "searchText": "Active Tab Screenshot|Use the activeTab permission to take a screenshot of the current tab|activeTab|downloads|browser.action.onClicked|browser.browserAction.onClicked|browser.tabs.captureVisibleTab|browser.downloads.download",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/active-tab-screenshot",
+      "apis": [
+        "browser.action.onClicked",
+        "browser.browserAction.onClicked",
+        "browser.tabs.captureVisibleTab",
+        "browser.downloads.download"
+      ],
+      "packages": [],
+      "permissions": [
+        "activeTab",
+        "downloads"
+      ]
+    },
+    {
       "name": "Background Message Forwarder",
       "description": "Forward messages from popup to active content scripts.",
       "searchText": "Background Message Forwarder|Forward messages from popup to active content scripts.|browser.runtime.onMessage|browser.tabs.query|browser.tabs.sendMessage|browser.runtime.sendMessage",
@@ -10,6 +27,20 @@
         "browser.tabs.query",
         "browser.tabs.sendMessage",
         "browser.runtime.sendMessage"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
+      "name": "Basic Messaging",
+      "description": "Send one-time messages or connect to long-lived ports.",
+      "searchText": "Basic Messaging|Send one-time messages or connect to long-lived ports.|browser.runtime.onMessage|browser.runtime.onConnect|browser.runtime.sendMessage|browser.runtime.connect",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/basic-messaging",
+      "apis": [
+        "browser.runtime.onMessage",
+        "browser.runtime.onConnect",
+        "browser.runtime.sendMessage",
+        "browser.runtime.connect"
       ],
       "packages": [],
       "permissions": []
@@ -87,20 +118,6 @@
         "browser.runtime.onInstalled",
         "browser.tabs.create",
         "browser.runtime.getURL"
-      ],
-      "packages": [],
-      "permissions": []
-    },
-    {
-      "name": "Messaging",
-      "description": "Send one-time messages or connect to long-lived ports.",
-      "searchText": "Messaging|Send one-time messages or connect to long-lived ports.|browser.runtime.onMessage|browser.runtime.onConnect|browser.runtime.sendMessage|browser.runtime.connect",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/messaging",
-      "apis": [
-        "browser.runtime.onMessage",
-        "browser.runtime.onConnect",
-        "browser.runtime.sendMessage",
-        "browser.runtime.connect"
       ],
       "packages": [],
       "permissions": []
@@ -230,13 +247,17 @@
   "allPermissions": [
     "activeTab",
     "contextMenus",
+    "downloads",
     "scripting",
     "storage",
     "tabs"
   ],
   "allApis": [
+    "browser.action.onClicked",
+    "browser.browserAction.onClicked",
     "browser.devtools.panels.create",
     "browser.devtools.panels.elements",
+    "browser.downloads.download",
     "browser.runtime.connect",
     "browser.runtime.getURL",
     "browser.runtime.id",
@@ -245,6 +266,7 @@
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
     "browser.storage.session.setAccessLevel",
+    "browser.tabs.captureVisibleTab",
     "browser.tabs.create",
     "browser.tabs.get",
     "browser.tabs.onUpdated",
