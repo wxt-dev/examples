@@ -26,6 +26,11 @@ export default defineContentScript({
         elements?.wrapper.remove();
       },
     });
+    console.log('WXT MODE:', {
+      MODE: import.meta.env.MODE,
+      DEV: import.meta.env.DEV,
+      PROD: import.meta.env.PROD,
+    });
 
     ui.mount();
   },

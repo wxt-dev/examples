@@ -6,4 +6,12 @@ export default defineConfig({
   runner: {
     startUrls: ["https://google.com"],
   },
+  debug:true,
+  vite(env) {
+    return {
+      build: {
+        minify:false
+      },
+    }
+  },
 });
