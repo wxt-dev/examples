@@ -113,6 +113,15 @@ importers:
         specifier: ^0.18.6
         version: 0.18.6
 
+  examples/inject-script:
+    devDependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      wxt:
+        specifier: ^0.18.6
+        version: 0.18.7
+
   examples/playwright-e2e-testing:
     devDependencies:
       '@playwright/test':

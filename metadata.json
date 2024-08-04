@@ -123,6 +123,17 @@
       "permissions": []
     },
     {
+      "name": "Inject Script",
+      "description": "Inject a script into a webpage.",
+      "searchText": "Inject Script|Inject a script into a webpage.|browser.runtime.getURL",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/inject-script",
+      "apis": [
+        "browser.runtime.getURL"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Playwright E2e Testing",
       "description": "Setup end-to-end tests for an extension.",
       "searchText": "Playwright E2e Testing|Setup end-to-end tests for an extension.|@playwright/test|playwright|browser.runtime.id",
