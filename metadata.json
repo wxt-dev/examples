@@ -134,6 +134,19 @@
       "permissions": []
     },
     {
+      "name": "Offscreen Document",
+      "description": "Basic setup for using an offscreen document",
+      "searchText": "Offscreen Document|Basic setup for using an offscreen document|offscreen|browser.offscreen.createDocument",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-setup",
+      "apis": [
+        "browser.offscreen.createDocument"
+      ],
+      "packages": [],
+      "permissions": [
+        "offscreen"
+      ]
+    },
+    {
       "name": "Playwright E2e Testing",
       "description": "Setup end-to-end tests for an extension.",
       "searchText": "Playwright E2e Testing|Setup end-to-end tests for an extension.|@playwright/test|playwright|browser.runtime.id",
@@ -259,6 +272,7 @@
     "activeTab",
     "contextMenus",
     "downloads",
+    "offscreen",
     "scripting",
     "storage",
     "tabs"
@@ -269,6 +283,7 @@
     "browser.devtools.panels.create",
     "browser.devtools.panels.elements",
     "browser.downloads.download",
+    "browser.offscreen.createDocument",
     "browser.runtime.connect",
     "browser.runtime.getURL",
     "browser.runtime.id",
