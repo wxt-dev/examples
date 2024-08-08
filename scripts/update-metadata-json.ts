@@ -95,9 +95,11 @@ async function collectApis(files: Record<string, string>) {
             // Remove listeners for a cleaner API listing
             .replace(".addListener", "")
             // Trim any trailing dots
-            .replace(/\.$/, ""),
+            .replace(/\.$/, "")
+            // Trim any trailing parenthesis
+            .replace(/\)$/, "")
         );
-      },
+      }
     );
     apis.forEach((api) => {
       dirApis.add(api);
