@@ -134,6 +134,28 @@
       "permissions": []
     },
     {
+      "name": "Offscreen document using DomParser",
+      "description": "Use the DOMParser API in an offscreen document to process HTML snippets in the background.",
+      "searchText": "Offscreen document using DomParser|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|DOMParser",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-domparser",
+      "apis": [
+        "browser.action.onClicked",
+        "browser.scripting.executeScript",
+        "browser.runtime.onMessage",
+        "browser.runtime.sendMessage",
+        "browser.offscreen.createDocument",
+        "browser.runtime.getURL",
+        "browser.offscreen.closeDocument",
+        "browser.runtime.getContexts",
+        "DOMParser"
+      ],
+      "packages": [],
+      "permissions": [
+        "offscreen",
+        "activeTab"
+      ]
+    },
+    {
       "name": "Offscreen Document",
       "description": "Basic setup for using an offscreen document",
       "searchText": "Offscreen Document|Basic setup for using an offscreen document|offscreen|browser.offscreen.createDocument",
@@ -278,19 +300,23 @@
     "tabs"
   ],
   "allApis": [
+    "DOMParser",
     "browser.action.onClicked",
     "browser.browserAction.onClicked",
     "browser.devtools.panels.create",
     "browser.devtools.panels.elements",
     "browser.downloads.download",
+    "browser.offscreen.closeDocument",
     "browser.offscreen.createDocument",
     "browser.runtime.connect",
+    "browser.runtime.getContexts",
     "browser.runtime.getURL",
     "browser.runtime.id",
     "browser.runtime.onConnect",
     "browser.runtime.onInstalled",
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
+    "browser.scripting.executeScript",
     "browser.storage.session.setAccessLevel",
     "browser.tabs.captureVisibleTab",
     "browser.tabs.create",
