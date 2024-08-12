@@ -135,8 +135,8 @@
     },
     {
       "name": "Offscreen document using DomParser",
-      "description": "Example of using DomParser with Offscreen API.",
-      "searchText": "Offscreen document using DomParser|Example of using DomParser with Offscreen API.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime)|browser.runtime.getContexts",
+      "description": "Use the DOMParser API in an offscreen document to process HTML snippets in the background.",
+      "searchText": "Offscreen document using DomParser|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|DOMParser",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-domparser",
       "apis": [
         "browser.action.onClicked",
@@ -146,8 +146,8 @@
         "browser.offscreen.createDocument",
         "browser.runtime.getURL",
         "browser.offscreen.closeDocument",
-        "browser.runtime)",
-        "browser.runtime.getContexts"
+        "browser.runtime.getContexts",
+        "DOMParser"
       ],
       "packages": [],
       "permissions": [
@@ -300,6 +300,7 @@
     "tabs"
   ],
   "allApis": [
+    "DOMParser",
     "browser.action.onClicked",
     "browser.browserAction.onClicked",
     "browser.devtools.panels.create",
@@ -307,7 +308,6 @@
     "browser.downloads.download",
     "browser.offscreen.closeDocument",
     "browser.offscreen.createDocument",
-    "browser.runtime)",
     "browser.runtime.connect",
     "browser.runtime.getContexts",
     "browser.runtime.getURL",

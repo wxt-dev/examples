@@ -25,7 +25,7 @@ export default defineBackground({
         if (result) {
           await sendMessageToOffscreenDocument(
             OFFSCREEN_KEYS.SCRIPT_COUNTS,
-            result
+            result,
           );
         }
       }
@@ -81,16 +81,17 @@ async function closeOffscreenDocument() {
 }
 
 async function hasOffscreenDocument() {
-  if ("getContexts" in browser.runtime) {
-    const contexts = await browser.runtime.getContexts({
-      contextTypes: [browser.runtime.ContextType.OFFSCREEN_DOCUMENT],
-      documentUrls: [browser.runtime.getURL(OFFSCREEN_DOCUMENT_PATH)],
-    });
-    return Boolean(contexts.length);
+  const contexts = await browser.runtime?.getContexts({
+    contextTypes: [browser.runtime.ContextType.OFFSCREEN_DOCUMENT],
+    documentUrls: [browser.runtime.getURL(OFFSCREEN_DOCUMENT_PATH)],
+  });
+
+  if (contexts != null) {
+    return contexts.length > 0;
   } else {
     const matchedClients = await self.clients.matchAll();
-    return await matchedClients.some((client) =>
-      client.url.includes(browser.runtime.id)
+    return matchedClients.some((client) =>
+      client.url.includes(browser.runtime.id),
     );
   }
 }
