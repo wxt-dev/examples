@@ -134,9 +134,9 @@
       "permissions": []
     },
     {
-      "name": "Offscreen document using DomParser",
+      "name": "Parse DOM in an Offscreen Document",
       "description": "Use the DOMParser API in an offscreen document to process HTML snippets in the background.",
-      "searchText": "Offscreen document using DomParser|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|DOMParser",
+      "searchText": "Parse DOM in an Offscreen Document|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|DOMParser",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-domparser",
       "apis": [
         "browser.action.onClicked",
@@ -156,9 +156,9 @@
       ]
     },
     {
-      "name": "Offscreen Document",
+      "name": "Basic Offscreen Document Setup",
       "description": "Basic setup for using an offscreen document",
-      "searchText": "Offscreen Document|Basic setup for using an offscreen document|offscreen|browser.offscreen.createDocument",
+      "searchText": "Basic Offscreen Document Setup|Basic setup for using an offscreen document|offscreen|browser.offscreen.createDocument",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-setup",
       "apis": [
         "browser.offscreen.createDocument"
