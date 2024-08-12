@@ -2,8 +2,8 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { execSync } from "node:child_process";
 import { consola } from "consola";
 import YAML from "yaml";
-import glob from "fast-glob";
-import { collectUsedBrowserApi } from "./parse-api.js";
+import { collectUsedBrowserApi } from "./parse-browser-api.js";
+import { readFilesInDir, readJsFilesInDir } from "./utils/readFiles.js";
 
 interface MetadataJson {
   examples: Array<{
@@ -68,29 +68,6 @@ function collectPackages(packageJson: any, files: Record<string, string>) {
   });
   packages.forEach((pkg) => allPackages.add(pkg));
   return packages;
-}
-
-async function readFilesInDir(dir: string): Promise<Record<string, string>> {
-  const files = await glob(`${dir}/**`, {
-    ignore: ["**/node_modules/**", "**/package.json"],
-  });
-  const result: Record<string, string> = {};
-  for (const file of files) {
-    result[file] = await readFile(file, "utf8");
-  }
-  return result;
-}
-
-async function readJsFilesInDir(dir: string): Promise<Record<string, string>> {
-  const files = await glob(`${dir}/**/*.{js,jsx,ts,tsx,mjs,cjs,mts,cts}`, {
-    ignore: ["**/node_modules/**", "**/package.json"],
-  });
-
-  const result: Record<string, string> = {};
-  for (const file of files) {
-    result[file] = await readFile(file, "utf8");
-  }
-  return result;
 }
 
 async function collectApis(files: Record<string, string>) {
