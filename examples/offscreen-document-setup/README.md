@@ -1,5 +1,5 @@
 ---
-name: Offscreen Document
+name: Basic Offscreen Document Setup
 description: Basic setup for using an offscreen document
 ---
 

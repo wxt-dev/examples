@@ -1,5 +1,5 @@
 ---
-name: Offscreen document using DomParser
+name: Parse DOM in an Offscreen Document
 description: Use the DOMParser API in an offscreen document to process HTML snippets in the background.
 apis:
   - DOMParser
