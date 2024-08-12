@@ -1,6 +1,5 @@
 {
-  "name": "wxt-starter",
-  "description": "manifest.json description",
+  "name": "offscreen-document-domparser",
   "private": true,
   "version": "0.0.0",
   "type": "module",
