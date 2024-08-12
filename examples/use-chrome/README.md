@@ -2,7 +2,7 @@
 name: Use Chrome
 description: Use the chrome global and disable the webextension-polyfill.
 packages:
-  - '@types/chrome'
+  - "@types/chrome"
 ---
 
 ```sh

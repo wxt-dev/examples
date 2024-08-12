@@ -1,14 +1,14 @@
-import { test as base, chromium, type BrowserContext } from '@playwright/test';
-import path from 'path';
+import { test as base, chromium, type BrowserContext } from "@playwright/test";
+import path from "path";
 
-const pathToExtension = path.resolve('.output/chrome-mv3');
+const pathToExtension = path.resolve(".output/chrome-mv3");
 
 export const test = base.extend<{
   context: BrowserContext;
   extensionId: string;
 }>({
   context: async ({}, use) => {
-    const context = await chromium.launchPersistentContext('', {
+    const context = await chromium.launchPersistentContext("", {
       headless: false,
       args: [
         `--disable-extensions-except=${pathToExtension}`,
@@ -20,16 +20,16 @@ export const test = base.extend<{
   },
   extensionId: async ({ context }, use) => {
     let background: { url(): string };
-    if (pathToExtension.endsWith('-mv3')) {
+    if (pathToExtension.endsWith("-mv3")) {
       [background] = context.serviceWorkers();
-      if (!background) background = await context.waitForEvent('serviceworker');
+      if (!background) background = await context.waitForEvent("serviceworker");
     } else {
       [background] = context.backgroundPages();
       if (!background)
-        background = await context.waitForEvent('backgroundpage');
+        background = await context.waitForEvent("backgroundpage");
     }
 
-    const extensionId = background.url().split('/')[2];
+    const extensionId = background.url().split("/")[2];
     await use(extensionId);
   },
 });
