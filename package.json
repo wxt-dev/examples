@@ -2,7 +2,8 @@
   "type": "module",
   "packageManager": "pnpm@8.15.8",
   "scripts": {
-    "update-metadata": "tsx scripts/update-metadata-json.ts"
+    "update-metadata": "tsx scripts/update-metadata-json.ts",
+    "test": "vitest"
   },
   "devDependencies": {
     "@babel/parser": "^7.25.3",
@@ -14,6 +15,7 @@
     "prettier": "^3.3.2",
     "tsx": "^4.15.4",
     "typescript": "^5.4.5",
+    "vitest": "2.0.5",
     "yaml": "^2.4.5"
   }
 }

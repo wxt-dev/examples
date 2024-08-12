@@ -3,8 +3,9 @@ import _traverse, { NodePath } from "@babel/traverse";
 import types from "@babel/types";
 import { getBabelParserOptions } from "./libs/babel.js";
 
+// tsx can't be default import, but vitest can be default import
 // @ts-expect-error https://github.com/babel/babel/discussions/13093
-const traverse = _traverse.default as typeof _traverse;
+const traverse = (_traverse.default || _traverse) as typeof _traverse;
 
 export function collectUsedBrowserApi(fileContent: string) {
   const ast = parser.parse(fileContent, getBabelParserOptions());
@@ -80,15 +81,17 @@ function pickBrowserApi(parts: string[]): string[] | undefined {
   return parts;
 }
 
-function filterBrowserApi(parts: string[] | undefined): string[] | undefined {
+export function filterBrowserApi(
+  parts: string[] | undefined
+): string[] | undefined {
   if (!parts) {
     return;
   }
 
   const IGNORE_MEMBERS = ["addListener"];
-  
+
   /**
-   * Remove target API for ignore.
+   * Trim target API for ignore.
    * @example
    * before
    *   ["browser", "runtime", "onMessage", "addListener"]
@@ -102,7 +105,6 @@ function filterBrowserApi(parts: string[] | undefined): string[] | undefined {
     parts.splice(ignoreApiIdx);
   }
 
-
   /**
    * Limit depth to 3 or 4.
    * @example Allow
@@ -113,10 +115,10 @@ function filterBrowserApi(parts: string[] | undefined): string[] | undefined {
    *  "browser.devtools.panels.elements.createSidebarPane"
    */
   if (parts.length < 3) {
-    return
+    return;
   }
   if (parts.length > 4) {
-    parts.splice(4)
+    parts.splice(4);
   }
 
   return parts;

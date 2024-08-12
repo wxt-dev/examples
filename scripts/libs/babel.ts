@@ -1,5 +1,10 @@
 import { ParserOptions, ParserPlugin } from "@babel/parser";
 
+/**
+ * @description
+ * reference from magicast's option
+ * https://github.com/unjs/magicast/blob/7b3f0bd9bdbc07d7c66408645a5dcd309511119e/src/babel.ts
+ */
 export function getBabelParserOptions(): ParserOptions {
   return {
     sourceType: "module",
