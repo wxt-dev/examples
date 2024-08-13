@@ -7,7 +7,6 @@ describe("parse-browser-api", () => {
       const file = `
         const a = chrome.action.getBadgeText();
         const b = browser.action.setBadgeText(a);
-        const c = globalThis.wxt.someMethod(b);
       `;
 
       const result = collectUsedBrowserApi(file);
@@ -20,16 +19,32 @@ describe("parse-browser-api", () => {
       const file = `
         const a = browser.action?.getBadgeText();
         const b = browser.action?.setBadgeText(a);
-        const c = globalThis.wxt?.someMethod(b);
+        const c = browser.devtools?.panels?.create()
       `;
 
       const result = collectUsedBrowserApi(file);
       expect(result).toStrictEqual(
-        new Set(["browser.action.getBadgeText", "browser.action.setBadgeText"])
+        new Set([
+          "browser.action.getBadgeText",
+          "browser.action.setBadgeText",
+          "browser.devtools.panels",
+          "browser.devtools.panels.create",
+        ])
       );
     });
 
-    it("should return correct apis for example code", () => {
+    it("should not return non-browser API", () => {
+      const file = `
+        const a = globalThis.wxt?.someMethod(b)
+        const b = window.document.querySelector('body')
+        const c = myObject.week.monday;
+      `;
+
+      const result = collectUsedBrowserApi(file);
+      expect(result).toStrictEqual(new Set([]));
+    });
+
+    it("should return correct apis for example code (normal)", () => {
       const file = `
         export default defineBackground(() => {
           if (browser.runtime.getManifest().manifest_version === 2) {
@@ -72,50 +87,59 @@ describe("parse-browser-api", () => {
     });
   });
 
+  it("should return correct apis for example code (special case)", () => {
+    const file = `
+      const a = (browser.action ?? browser.browserAction).onClicked.addListener(
+        () => {
+          console.log("(parentheses) with Nullish coalescing");
+        }
+      );
+    `;
+
+    const result = collectUsedBrowserApi(file);
+    expect(result).toStrictEqual(
+      new Set(["browser.action.onClicked", "browser.browserAction.onClicked"])
+    );
+  });
+
   describe("filterBrowserApi", () => {
     it("should return undefined if no parts", () => {
-      const result = filterBrowserApi(undefined);
-      expect(result).toBe(undefined);
+      const result = filterBrowserApi([]);
+      expect(result).toStrictEqual([]);
     });
 
     it("should trim the ignore member name", () => {
       const result = filterBrowserApi([
-        "browser",
-        "runtime",
-        "onMessage",
-        "addListener",
+        ["browser", "runtime", "onMessage", "addListener"],
       ]);
-      expect(result).toStrictEqual(["browser", "runtime", "onMessage"]);
+      expect(result).toStrictEqual([["browser", "runtime", "onMessage"]]);
     });
 
     it("should return api with depth of 3 as is", () => {
-      const result = filterBrowserApi(["browser", "tabs", "captureVisibleTab"]);
-      expect(result).toStrictEqual(["browser", "tabs", "captureVisibleTab"]);
+      const result = filterBrowserApi([
+        ["browser", "tabs", "captureVisibleTab"],
+      ]);
+      expect(result).toStrictEqual([["browser", "tabs", "captureVisibleTab"]]);
     });
 
     it("should return api with depth of 4 as is", () => {
-      const result = filterBrowserApi(["browser", "devtools", "panels.create"]);
-      expect(result).toStrictEqual(["browser", "devtools", "panels.create"]);
+      const result = filterBrowserApi([
+        ["browser", "devtools", "panels.create"],
+      ]);
+      expect(result).toStrictEqual([["browser", "devtools", "panels.create"]]);
     });
 
     it("should return undefined for api with depth less than 2", () => {
-      const result = filterBrowserApi(["browser", "runtime"]);
-      expect(result).toBe(undefined);
+      const result = filterBrowserApi([["browser", "runtime"]]);
+      expect(result).toStrictEqual([]);
     });
 
     it("should trim for api with depth greater than 5", () => {
       const result = filterBrowserApi([
-        "browser",
-        "devtools",
-        "panels",
-        "elements",
-        "createSidebarPane",
+        ["browser", "devtools", "panels", "elements", "createSidebarPane"],
       ]);
       expect(result).toStrictEqual([
-        "browser",
-        "devtools",
-        "panels",
-        "elements",
+        ["browser", "devtools", "panels", "elements"],
       ]);
     });
   });
