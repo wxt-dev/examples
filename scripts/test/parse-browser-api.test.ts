@@ -102,44 +102,43 @@ describe("parse-browser-api", () => {
   });
 
   describe("filterBrowserApi", () => {
-    it("should return undefined if no parts", () => {
+    it("should return empty if no parts", () => {
       const result = filterBrowserApi([]);
       expect(result).toStrictEqual([]);
     });
 
-    it("should trim the ignore member name", () => {
-      const result = filterBrowserApi([
-        ["browser", "runtime", "onMessage", "addListener"],
-      ]);
-      expect(result).toStrictEqual([["browser", "runtime", "onMessage"]]);
-    });
-
-    it("should return api with depth of 3 as is", () => {
-      const result = filterBrowserApi([
-        ["browser", "tabs", "captureVisibleTab"],
-      ]);
-      expect(result).toStrictEqual([["browser", "tabs", "captureVisibleTab"]]);
-    });
-
-    it("should return api with depth of 4 as is", () => {
-      const result = filterBrowserApi([
-        ["browser", "devtools", "panels.create"],
-      ]);
-      expect(result).toStrictEqual([["browser", "devtools", "panels.create"]]);
-    });
-
-    it("should return undefined for api with depth less than 2", () => {
+    it("should return empty for api with depth less than 2", () => {
       const result = filterBrowserApi([["browser", "runtime"]]);
       expect(result).toStrictEqual([]);
     });
 
-    it("should trim for api with depth greater than 5", () => {
+    it("should return length of 3 for APIs in one identifier namespace", () => {
       const result = filterBrowserApi([
+        ["browser", "tabs", "captureVisibleTab"],
+        ["browser", "tabs", "onCreated", "addListener"],
+      ]);
+      expect(result).toStrictEqual([
+        ["browser", "tabs", "captureVisibleTab"],
+        ["browser", "tabs", "onCreated"],
+      ]);
+    });
+
+    it("should return length of 4 for APIs in two identifiers namespaces", () => {
+      const result = filterBrowserApi([
+        ["browser", "devtools", "panels", "create"],
         ["browser", "devtools", "panels", "elements", "createSidebarPane"],
       ]);
       expect(result).toStrictEqual([
+        ["browser", "devtools", "panels", "create"],
         ["browser", "devtools", "panels", "elements"],
       ]);
+    });
+    
+    it("should return empty for APIs in two identifiers namespaces with length less than 4", () => {
+      const result = filterBrowserApi([
+        ["browser", "devtools", "panels"],
+      ]);
+      expect(result).toStrictEqual([]);
     });
   });
 });
