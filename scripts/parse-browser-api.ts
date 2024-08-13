@@ -2,10 +2,13 @@ import parser from "@babel/parser";
 import _traverse from "@babel/traverse";
 import types from "@babel/types";
 import { getBabelParserOptions } from "./libs/babel.js";
+import { loadExtensionApiMap } from "./libs/loadExtensionApiMap.js";
 
 // tsx can't be default import, but vitest can be default import
 // @ts-expect-error https://github.com/babel/babel/discussions/13093
 const traverse = (_traverse.default || _traverse) as typeof _traverse;
+
+const EXTENSION_API_MAP = await loadExtensionApiMap();
 
 type Parts = string[];
 type PartsCollection = Parts[];
@@ -98,46 +101,44 @@ function pickBrowserApi(partsCollection: PartsCollection): PartsCollection {
 export function filterBrowserApi(
   partsCollection: PartsCollection
 ): PartsCollection {
-  const filteredCollection = partsCollection.map((parts) => {
+  const filteredCollection = partsCollection.map((_parts) => {
+    let parts: Parts | undefined = _parts;
+
     if (!parts) {
       return;
     }
 
-    const IGNORE_MEMBERS = ["addListener"];
-
-    /**
-     * Trim target API for ignore.
-     * @example
-     * before
-     *   ["browser", "runtime", "onMessage", "addListener"]
-     * after
-     *   ["browser", "runtime", "onMessage"]
-     */
-    const ignoreApiIdx = parts.findLastIndex((name) =>
-      IGNORE_MEMBERS.includes(name)
-    );
-    if (ignoreApiIdx > 0) {
-      parts.splice(ignoreApiIdx);
-    }
-
-    /**
-     * Limit depth to 3 or 4.
-     * @example Allow
-     *  "browser.tabs.captureVisibleTab"
-     *  "browser.devtools.panels.create"
-     * @example Disallow
-     *  "browser.runtime"
-     *  "browser.devtools.panels.elements.createSidebarPane"
-     */
     if (parts.length < 3) {
       return;
     }
-    if (parts.length > 4) {
-      parts.splice(4);
-    }
+
+    parts = distinguishBrowserApi(parts);
 
     return parts;
   });
 
   return filteredCollection.filter((parts) => !!parts);
+}
+
+/**
+ * Limit depth to 3 or 4.
+ * @example before
+ *  "browser.devtools.panels.elements.createSidebarPane"
+ *  "browser.devtools.panels.create"
+ *  "browser.tabs.onDetached.addListener"
+ * @example after
+ *  "browser.devtools.panels.elements"
+ *  "browser.devtools.panels.create"
+ *  "browser.tabs.onDetached"
+ */
+function distinguishBrowserApi(parts: Parts): Parts | undefined {
+  // For some api namespaces consist of two identifiers like `browser.devtools.panels`. Checks for matching joined namespace.
+  if (EXTENSION_API_MAP[`${parts[1]}.${parts[2]}`]) {
+    if (parts.length < 4) {
+      return;
+    }
+    return [parts[0], parts[1], parts[2], parts[3]];
+  } else {
+    return [parts[0], parts[1], parts[2]];
+  }
 }

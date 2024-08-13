@@ -27,7 +27,6 @@ describe("parse-browser-api", () => {
         new Set([
           "browser.action.getBadgeText",
           "browser.action.setBadgeText",
-          "browser.devtools.panels",
           "browser.devtools.panels.create",
         ])
       );
