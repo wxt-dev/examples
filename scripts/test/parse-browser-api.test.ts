@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { collectUsedBrowserApi, filterBrowserApi } from "../parse-browser-api";
+import {
+  collectUsedBrowserApi,
+  filterBrowserApi,
+  distinguishBrowserApi,
+} from "../parse-browser-api";
 
 describe("parse-browser-api", () => {
   describe("collectUsedBrowserApi", () => {
@@ -117,39 +121,95 @@ describe("parse-browser-api", () => {
       expect(result).toStrictEqual([]);
     });
 
-    it("should return length-adjusted ApiItems.", () => {
+    it("should be excluded if apiType is 'type'", () => {
       const result = filterBrowserApi([
-        ["browser", "tabs", "captureVisibleTab"],
-        ["browser", "tabs", "onCreated", "addListener"],
-        ["browser", "devtools", "panels", "create"],
-        ["browser", "devtools", "panels", "elements", "createSidebarPane"],
+        ["browser", "offscreen", "Reason"],
+        ["browser", "devtools", "panels", "Button"],
       ]);
-      expect(result).toStrictEqual([
-        {
+      expect(result).toStrictEqual([]);
+    });
+
+    it("should be trimmed the ignore api", () => {
+      const result = filterBrowserApi([
+        ["browser", "tabs", "onCreated", "addListener"],
+      ]);
+      expect(result[0].parts).toStrictEqual(["browser", "tabs", "onCreated"]);
+    });
+
+    it("should return unlimited depth parts", () => {
+      const result = filterBrowserApi([
+        ["browser", "runtime", ...[...Array(48)].map((_, i) => `${i}`)],
+      ]);
+      expect(result[0].parts.length).toBe(50);
+    });
+  });
+
+  describe("distinguishBrowserApi", () => {
+    it("should return undefined if no property", () => {
+      for (const parts of [
+        ["browser", "runtime"],
+        ["browser", "devtools", "panels"],
+      ]) {
+        const result = distinguishBrowserApi(parts);
+        expect(result).toBe(undefined);
+      }
+    });
+
+    it.each([
+      {
+        parts: ["browser", "tabs", "captureVisibleTab"],
+        expected: {
           namespace: "tabs",
           propertyName: "captureVisibleTab",
           type: "method",
           parts: ["browser", "tabs", "captureVisibleTab"],
         },
-        {
+      },
+      {
+        parts: ["browser", "tabs", "onCreated", "addListener"],
+        expected: {
           namespace: "tabs",
           propertyName: "onCreated",
           type: "event",
-          parts: ["browser", "tabs", "onCreated"],
+          parts: ["browser", "tabs", "onCreated", "addListener"],
         },
-        {
+      },
+      {
+        parts: ["browser", "devtools", "panels", "Button"],
+        expected: {
           namespace: "devtools.panels",
-          propertyName: "create",
-          type: "method",
-          parts: ["browser", "devtools", "panels", "create"],
+          propertyName: "Button",
+          type: "type",
+          parts: ["browser", "devtools", "panels", "Button"],
         },
-        {
+      },
+      {
+        parts: [
+          "browser",
+          "devtools",
+          "panels",
+          "elements",
+          "createSidebarPane",
+        ],
+        expected: {
           namespace: "devtools.panels",
           propertyName: "elements",
           type: "property",
-          parts: ["browser", "devtools", "panels", "elements"],
+          parts: [
+            "browser",
+            "devtools",
+            "panels",
+            "elements",
+            "createSidebarPane",
+          ],
         },
-      ]);
-    });
+      },
+    ])(
+      "should convert parts to BrowserApiItem: $case",
+      ({ parts, expected }) => {
+        const result = distinguishBrowserApi(parts);
+        expect(result).toStrictEqual(expected);
+      }
+    );
   });
 });

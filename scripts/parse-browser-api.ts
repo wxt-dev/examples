@@ -117,7 +117,32 @@ export function filterBrowserApi(
 
       const apiItem = distinguishBrowserApi(parts);
 
-      if (apiItem && apiItem.parts.length < 3) {
+      /**
+       * Exclude undefined item & Type API(like Enums)
+       * @example
+       * `browser.offscreen.Reason`
+       */
+      if (!apiItem || apiItem.type === "type") {
+        return;
+      }
+
+      /**
+       * Trim target API for ignore.
+       * @example
+       * before
+       *   ["browser", "runtime", "onMessage", "addListener"]
+       * after
+       *   ["browser", "runtime", "onMessage"]
+       */
+      const TRIM_MEMBERS = ["addListener"];
+      const trimApiIndex = apiItem.parts.findLastIndex((name) =>
+        TRIM_MEMBERS.includes(name)
+      );
+      if (trimApiIndex > 0) {
+        apiItem.parts.splice(trimApiIndex);
+      }
+
+      if (apiItem.parts.length < 3) {
         return;
       }
 
@@ -132,7 +157,9 @@ export function filterBrowserApi(
  * For some api namespaces consist of two identifiers like `browser.devtools.panels`. Checks for matching joined namespace.
  * And convert Parts to BrowserApiItem.
  */
-function distinguishBrowserApi(parts: Parts): BrowserApiItem | undefined {
+export function distinguishBrowserApi(
+  parts: Parts
+): BrowserApiItem | undefined {
   const getApiType = (namespace: string, propertyName: string): ApiType => {
     const apiTypes = EXTENSION_API_MAP[namespace];
 
@@ -162,7 +189,7 @@ function distinguishBrowserApi(parts: Parts): BrowserApiItem | undefined {
       namespace: twoNamespace,
       propertyName,
       type: getApiType(twoNamespace, propertyName),
-      parts: parts.slice(0, 4),
+      parts,
     };
   } else {
     const namespace = parts[1];
@@ -174,7 +201,7 @@ function distinguishBrowserApi(parts: Parts): BrowserApiItem | undefined {
       namespace,
       propertyName,
       type: getApiType(namespace, propertyName),
-      parts: parts.slice(0, 3),
+      parts,
     };
   }
 }

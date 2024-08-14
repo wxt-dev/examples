@@ -45,19 +45,23 @@
     {
       "name": "Content Script Session Storage",
       "description": "Setup and use session storage in content scripts.",
-      "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|wxt/storage|storage|browser.storage.session.setAccessLevel",
+      "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|wxt/storage|storage|browser.storage.session.setAccessLevel|browser.storage.session",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/content-script-session-storage",
-      "apis": ["browser.storage.session.setAccessLevel"],
+      "apis": [
+        "browser.storage.session.setAccessLevel",
+        "browser.storage.session"
+      ],
       "packages": ["wxt/storage"],
       "permissions": ["storage"]
     },
     {
       "name": "Devtools Extension",
       "description": "Create an extension that adds to the browser's devtools.",
-      "searchText": "Devtools Extension|Create an extension that adds to the browser's devtools.|browser.devtools.panels.create|browser.devtools.panels.elements",
+      "searchText": "Devtools Extension|Create an extension that adds to the browser's devtools.|browser.devtools.panels.create|browser.devtools.panels.elements.createSidebarPane|browser.devtools.panels.elements",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/devtools-extension",
       "apis": [
         "browser.devtools.panels.create",
+        "browser.devtools.panels.elements.createSidebarPane",
         "browser.devtools.panels.elements"
       ],
       "packages": [],
@@ -100,16 +104,16 @@
     {
       "name": "Inject Script",
       "description": "Inject a script into a webpage.",
-      "searchText": "Inject Script|Inject a script into a webpage.|browser.runtime.getURL",
+      "searchText": "Inject Script|Inject a script into a webpage.|browser.runtime.getURL|browser.runtime.getManifest",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/inject-script",
-      "apis": ["browser.runtime.getURL"],
+      "apis": ["browser.runtime.getURL", "browser.runtime.getManifest"],
       "packages": [],
       "permissions": []
     },
     {
       "name": "Parse DOM in an Offscreen Document",
       "description": "Use the DOMParser API in an offscreen document to process HTML snippets in the background.",
-      "searchText": "Parse DOM in an Offscreen Document|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|DOMParser",
+      "searchText": "Parse DOM in an Offscreen Document|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|browser.runtime.id|DOMParser",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-domparser",
       "apis": [
         "browser.action.onClicked",
@@ -120,6 +124,7 @@
         "browser.runtime.getURL",
         "browser.offscreen.closeDocument",
         "browser.runtime.getContexts",
+        "browser.runtime.id",
         "DOMParser"
       ],
       "packages": [],
@@ -243,11 +248,13 @@
     "browser.browserAction.onClicked",
     "browser.devtools.panels.create",
     "browser.devtools.panels.elements",
+    "browser.devtools.panels.elements.createSidebarPane",
     "browser.downloads.download",
     "browser.offscreen.closeDocument",
     "browser.offscreen.createDocument",
     "browser.runtime.connect",
     "browser.runtime.getContexts",
+    "browser.runtime.getManifest",
     "browser.runtime.getURL",
     "browser.runtime.id",
     "browser.runtime.onConnect",
@@ -255,6 +262,7 @@
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
     "browser.scripting.executeScript",
+    "browser.storage.session",
     "browser.storage.session.setAccessLevel",
     "browser.tabs.captureVisibleTab",
     "browser.tabs.create",
