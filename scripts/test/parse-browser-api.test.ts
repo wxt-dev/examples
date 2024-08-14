@@ -107,38 +107,49 @@ describe("parse-browser-api", () => {
       expect(result).toStrictEqual([]);
     });
 
-    it("should return empty for api with depth less than 2", () => {
-      const result = filterBrowserApi([["browser", "runtime"]]);
+    it("should return empty if parts length less than 2", () => {
+      const result = filterBrowserApi([["browser"], ["browser", "runtime"]]);
       expect(result).toStrictEqual([]);
     });
 
-    it("should return length of 3 for APIs in one identifier namespace", () => {
+    it("should return empty if two identifiers namespaces with no property", () => {
+      const result = filterBrowserApi([["browser", "devtools", "panels"]]);
+      expect(result).toStrictEqual([]);
+    });
+
+    it("should return length-adjusted ApiItems.", () => {
       const result = filterBrowserApi([
         ["browser", "tabs", "captureVisibleTab"],
         ["browser", "tabs", "onCreated", "addListener"],
-      ]);
-      expect(result).toStrictEqual([
-        ["browser", "tabs", "captureVisibleTab"],
-        ["browser", "tabs", "onCreated"],
-      ]);
-    });
-
-    it("should return length of 4 for APIs in two identifiers namespaces", () => {
-      const result = filterBrowserApi([
         ["browser", "devtools", "panels", "create"],
         ["browser", "devtools", "panels", "elements", "createSidebarPane"],
       ]);
       expect(result).toStrictEqual([
-        ["browser", "devtools", "panels", "create"],
-        ["browser", "devtools", "panels", "elements"],
+        {
+          namespace: "tabs",
+          propertyName: "captureVisibleTab",
+          type: "method",
+          parts: ["browser", "tabs", "captureVisibleTab"],
+        },
+        {
+          namespace: "tabs",
+          propertyName: "onCreated",
+          type: "event",
+          parts: ["browser", "tabs", "onCreated"],
+        },
+        {
+          namespace: "devtools.panels",
+          propertyName: "create",
+          type: "method",
+          parts: ["browser", "devtools", "panels", "create"],
+        },
+        {
+          namespace: "devtools.panels",
+          propertyName: "elements",
+          type: "property",
+          parts: ["browser", "devtools", "panels", "elements"],
+        },
       ]);
-    });
-    
-    it("should return empty for APIs in two identifiers namespaces with length less than 4", () => {
-      const result = filterBrowserApi([
-        ["browser", "devtools", "panels"],
-      ]);
-      expect(result).toStrictEqual([]);
     });
   });
 });

@@ -12,6 +12,14 @@ const EXTENSION_API_MAP = await loadExtensionApiMap();
 
 type Parts = string[];
 type PartsCollection = Parts[];
+type ApiType = "event" | "method" | "property" | "type" | "unknown";
+type BrowserApiItem = {
+  namespace: string;
+  propertyName: string;
+  type: ApiType;
+  parts: Parts;
+};
+type BrowserApiItemCollection = BrowserApiItem[];
 
 export function collectUsedBrowserApi(fileContent: string) {
   const ast = parser.parse(fileContent, getBabelParserOptions());
@@ -23,7 +31,7 @@ export function collectUsedBrowserApi(fileContent: string) {
       const partsCollection = getFullMemberExpression(path.node);
       const browserApi = pickBrowserApi(partsCollection);
       const filteredBrowserApi = filterBrowserApi(browserApi);
-      for (const parts of filteredBrowserApi) {
+      for (const { parts } of filteredBrowserApi) {
         usedBrowserApi.add(parts.join("."));
       }
     },
@@ -31,7 +39,7 @@ export function collectUsedBrowserApi(fileContent: string) {
       const partsCollection = getFullMemberExpression(path.node);
       const browserApi = pickBrowserApi(partsCollection);
       const filteredBrowserApi = filterBrowserApi(browserApi);
-      for (const parts of filteredBrowserApi) {
+      for (const { parts } of filteredBrowserApi) {
         usedBrowserApi.add(parts.join("."));
       }
     },
@@ -100,45 +108,73 @@ function pickBrowserApi(partsCollection: PartsCollection): PartsCollection {
 
 export function filterBrowserApi(
   partsCollection: PartsCollection
-): PartsCollection {
-  const filteredCollection = partsCollection.map((_parts) => {
-    let parts: Parts | undefined = _parts;
+): BrowserApiItemCollection {
+  const filteredCollection = partsCollection.map<BrowserApiItem | undefined>(
+    (parts) => {
+      if (!parts) {
+        return;
+      }
 
-    if (!parts) {
-      return;
+      const apiItem = distinguishBrowserApi(parts);
+
+      if (apiItem && apiItem.parts.length < 3) {
+        return;
+      }
+
+      return apiItem;
     }
+  );
 
-    if (parts.length < 3) {
-      return;
-    }
-
-    parts = distinguishBrowserApi(parts);
-
-    return parts;
-  });
-
-  return filteredCollection.filter((parts) => !!parts);
+  return filteredCollection.filter((apiItem) => !!apiItem);
 }
 
 /**
- * Limit depth to 3 or 4.
- * @example before
- *  "browser.devtools.panels.elements.createSidebarPane"
- *  "browser.devtools.panels.create"
- *  "browser.tabs.onDetached.addListener"
- * @example after
- *  "browser.devtools.panels.elements"
- *  "browser.devtools.panels.create"
- *  "browser.tabs.onDetached"
+ * For some api namespaces consist of two identifiers like `browser.devtools.panels`. Checks for matching joined namespace.
+ * And convert Parts to BrowserApiItem.
  */
-function distinguishBrowserApi(parts: Parts): Parts | undefined {
-  // For some api namespaces consist of two identifiers like `browser.devtools.panels`. Checks for matching joined namespace.
-  if (EXTENSION_API_MAP[`${parts[1]}.${parts[2]}`]) {
-    if (parts.length < 4) {
+function distinguishBrowserApi(parts: Parts): BrowserApiItem | undefined {
+  const getApiType = (namespace: string, propertyName: string): ApiType => {
+    const apiTypes = EXTENSION_API_MAP[namespace];
+
+    if (apiTypes.methods.includes(propertyName)) {
+      return "method";
+    }
+    if (apiTypes.events.includes(propertyName)) {
+      return "event";
+    }
+    if (apiTypes.properties.includes(propertyName)) {
+      return "property";
+    }
+    if (apiTypes.types.includes(propertyName)) {
+      return "type";
+    }
+    return "unknown";
+  };
+
+  const twoNamespace = `${parts[1]}.${parts[2]}`;
+
+  if (EXTENSION_API_MAP[twoNamespace]) {
+    const propertyName = parts[3];
+    if (!propertyName) {
       return;
     }
-    return [parts[0], parts[1], parts[2], parts[3]];
+    return {
+      namespace: twoNamespace,
+      propertyName,
+      type: getApiType(twoNamespace, propertyName),
+      parts: parts.slice(0, 4),
+    };
   } else {
-    return [parts[0], parts[1], parts[2]];
+    const namespace = parts[1];
+    const propertyName = parts[2];
+    if (!propertyName) {
+      return;
+    }
+    return {
+      namespace,
+      propertyName,
+      type: getApiType(namespace, propertyName),
+      parts: parts.slice(0, 3),
+    };
   }
 }
