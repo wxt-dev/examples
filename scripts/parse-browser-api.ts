@@ -1,5 +1,5 @@
 import parser from "@babel/parser";
-import _traverse from "@babel/traverse";
+import _traverse, { NodePath } from "@babel/traverse";
 import types from "@babel/types";
 import { getBabelParserOptions } from "./libs/babel.js";
 import { loadExtensionApiMap } from "./libs/loadExtensionApiMap.js";
@@ -26,22 +26,21 @@ export function collectUsedBrowserApi(fileContent: string) {
 
   const usedBrowserApi = new Set<string>();
 
+  const extractApi = (path:NodePath)=>{
+    const partsCollection = getFullMemberExpression(path.node);
+      const browserApi = pickBrowserApi(partsCollection);
+      const filteredBrowserApi = filterBrowserApi(browserApi);
+      for (const { parts } of filteredBrowserApi) {
+        usedBrowserApi.add(parts.join("."));
+      }
+  }
+
   traverse(ast, {
     MemberExpression(path) {
-      const partsCollection = getFullMemberExpression(path.node);
-      const browserApi = pickBrowserApi(partsCollection);
-      const filteredBrowserApi = filterBrowserApi(browserApi);
-      for (const { parts } of filteredBrowserApi) {
-        usedBrowserApi.add(parts.join("."));
-      }
+      extractApi(path)
     },
     OptionalMemberExpression(path) {
-      const partsCollection = getFullMemberExpression(path.node);
-      const browserApi = pickBrowserApi(partsCollection);
-      const filteredBrowserApi = filterBrowserApi(browserApi);
-      for (const { parts } of filteredBrowserApi) {
-        usedBrowserApi.add(parts.join("."));
-      }
+      extractApi(path)
     },
   });
 
