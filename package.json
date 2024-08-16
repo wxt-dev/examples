@@ -2,6 +2,7 @@
   "type": "module",
   "packageManager": "pnpm@8.15.8",
   "scripts": {
+    "format": "prettier --write .",
     "update-metadata": "tsx scripts/update-metadata-json.ts"
   },
   "devDependencies": {
