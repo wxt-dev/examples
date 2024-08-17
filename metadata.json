@@ -80,6 +80,15 @@
       "permissions": ["storage", "scripting", "activeTab", "contextMenus"]
     },
     {
+      "name": "ESM Content Script UI",
+      "description": "Pre-bundle a content script as ESM with code-splitting enabled, dynamically import it from a content script, and load a UI with scoped CSS.",
+      "searchText": "ESM Content Script UI|Pre-bundle a content script as ESM with code-splitting enabled, dynamically import it from a content script, and load a UI with scoped CSS.|vite|browser.runtime.getURL",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/esm-content-script-ui",
+      "apis": ["browser.runtime.getURL"],
+      "packages": ["vite"],
+      "permissions": []
+    },
+    {
       "name": "Favicon Tracker",
       "description": "Track and save favicons for all the websites you've been to.",
       "searchText": "Favicon Tracker|Track and save favicons for all the websites you've been to.|@webext-core/proxy-service|idb|tabs|browser.tabs.onUpdated|browser.tabs.get|indexeddb",
@@ -227,6 +236,7 @@
     "react",
     "react-dom",
     "tailwindcss",
+    "vite",
     "vitest",
     "vue",
     "webext-dynamic-content-scripts",

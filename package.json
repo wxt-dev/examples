@@ -3,6 +3,7 @@
   "packageManager": "pnpm@8.15.8",
   "scripts": {
     "update-metadata": "tsx scripts/update-metadata-json.ts",
+    "format": "prettier --write .",
     "test": "vitest"
   },
   "devDependencies": {
