@@ -26,21 +26,21 @@ export function collectUsedBrowserApi(fileContent: string) {
 
   const usedBrowserApi = new Set<string>();
 
-  const extractApi = (path:NodePath)=>{
+  const extractApi = (path: NodePath) => {
     const partsCollection = getFullMemberExpression(path.node);
-      const browserApi = pickBrowserApi(partsCollection);
-      const filteredBrowserApi = filterBrowserApi(browserApi);
-      for (const { parts } of filteredBrowserApi) {
-        usedBrowserApi.add(parts.join("."));
-      }
-  }
+    const browserApi = pickBrowserApi(partsCollection);
+    const filteredBrowserApi = filterBrowserApi(browserApi);
+    for (const { parts } of filteredBrowserApi) {
+      usedBrowserApi.add(parts.join("."));
+    }
+  };
 
   traverse(ast, {
     MemberExpression(path) {
-      extractApi(path)
+      extractApi(path);
     },
     OptionalMemberExpression(path) {
-      extractApi(path)
+      extractApi(path);
     },
   });
 
@@ -106,7 +106,7 @@ function pickBrowserApi(partsCollection: PartsCollection): PartsCollection {
 }
 
 export function filterBrowserApi(
-  partsCollection: PartsCollection
+  partsCollection: PartsCollection,
 ): BrowserApiItemCollection {
   const filteredCollection = partsCollection.map<BrowserApiItem | undefined>(
     (parts) => {
@@ -135,7 +135,7 @@ export function filterBrowserApi(
        */
       const TRIM_MEMBERS = ["addListener"];
       const trimApiIndex = apiItem.parts.findLastIndex((name) =>
-        TRIM_MEMBERS.includes(name)
+        TRIM_MEMBERS.includes(name),
       );
       if (trimApiIndex > 0) {
         apiItem.parts.splice(trimApiIndex);
@@ -146,7 +146,7 @@ export function filterBrowserApi(
       }
 
       return apiItem;
-    }
+    },
   );
 
   return filteredCollection.filter((apiItem) => !!apiItem);
@@ -157,7 +157,7 @@ export function filterBrowserApi(
  * And convert Parts to BrowserApiItem.
  */
 export function distinguishBrowserApi(
-  parts: Parts
+  parts: Parts,
 ): BrowserApiItem | undefined {
   const getApiType = (namespace: string, propertyName: string): ApiType => {
     const apiTypes = EXTENSION_API_MAP[namespace];

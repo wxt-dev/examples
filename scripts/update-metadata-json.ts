@@ -73,7 +73,7 @@ function collectPackages(packageJson: any, files: Record<string, string>) {
 async function collectApis(files: Record<string, string>) {
   const dirApis = new Set<string>();
   for (const textContent of Object.values(files)) {
-    const apis = collectUsedBrowserApi(textContent)
+    const apis = collectUsedBrowserApi(textContent);
     apis.forEach((api) => {
       dirApis.add(api);
       allApis.add(api);

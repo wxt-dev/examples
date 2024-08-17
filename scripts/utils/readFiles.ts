@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import glob from "fast-glob";
 
 async function _readFilesInDir(
-  globPattern: string
+  globPattern: string,
 ): Promise<Record<string, string>> {
   const files = await glob(globPattern, {
     ignore: ["**/node_modules/**", "**/package.json"],

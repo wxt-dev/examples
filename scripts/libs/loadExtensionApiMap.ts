@@ -15,7 +15,7 @@ export async function loadExtensionApiMap(): Promise<
   Record<string, Record<string, string[]>>
 > {
   const res = await fetch(
-    "https://raw.githubusercontent.com/GoogleChrome/chrome-extensions-samples/main/.repo/sample-list-generator/extension-apis.json"
+    "https://raw.githubusercontent.com/GoogleChrome/chrome-extensions-samples/main/.repo/sample-list-generator/extension-apis.json",
   );
   return await res.json();
 }

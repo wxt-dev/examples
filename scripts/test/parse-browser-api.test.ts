@@ -15,7 +15,7 @@ describe("parse-browser-api", () => {
 
       const result = collectUsedBrowserApi(file);
       expect(result).toStrictEqual(
-        new Set(["browser.action.getBadgeText", "browser.action.setBadgeText"])
+        new Set(["browser.action.getBadgeText", "browser.action.setBadgeText"]),
       );
     });
 
@@ -32,7 +32,7 @@ describe("parse-browser-api", () => {
           "browser.action.getBadgeText",
           "browser.action.setBadgeText",
           "browser.devtools.panels.create",
-        ])
+        ]),
       );
     });
 
@@ -85,7 +85,7 @@ describe("parse-browser-api", () => {
           "browser.runtime.onMessage",
           "browser.tabs.query",
           "browser.tabs.sendMessage",
-        ])
+        ]),
       );
     });
   });
@@ -101,7 +101,7 @@ describe("parse-browser-api", () => {
 
     const result = collectUsedBrowserApi(file);
     expect(result).toStrictEqual(
-      new Set(["browser.action.onClicked", "browser.browserAction.onClicked"])
+      new Set(["browser.action.onClicked", "browser.browserAction.onClicked"]),
     );
   });
 
@@ -209,7 +209,7 @@ describe("parse-browser-api", () => {
       ({ parts, expected }) => {
         const result = distinguishBrowserApi(parts);
         expect(result).toStrictEqual(expected);
-      }
+      },
     );
   });
 });

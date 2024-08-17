@@ -2,9 +2,9 @@
   "type": "module",
   "packageManager": "pnpm@8.15.8",
   "scripts": {
-    "update-metadata": "tsx scripts/update-metadata-json.ts",
     "format": "prettier --write .",
-    "test": "vitest"
+    "test": "vitest",
+    "update-metadata": "tsx scripts/update-metadata-json.ts"
   },
   "devDependencies": {
     "@babel/parser": "^7.25.3",
