@@ -3,14 +3,20 @@
   "packageManager": "pnpm@8.15.8",
   "scripts": {
     "format": "prettier --write .",
+    "test": "vitest",
     "update-metadata": "tsx scripts/update-metadata-json.ts"
   },
   "devDependencies": {
+    "@babel/parser": "^7.25.3",
+    "@babel/traverse": "^7.25.3",
+    "@babel/types": "^7.25.2",
+    "@types/babel__traverse": "^7.20.6",
     "consola": "^3.2.3",
     "fast-glob": "^3.3.2",
     "prettier": "^3.3.2",
     "tsx": "^4.15.4",
     "typescript": "^5.4.5",
+    "vitest": "2.0.5",
     "yaml": "^2.4.5"
   }
 }

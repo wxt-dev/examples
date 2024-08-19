@@ -2,7 +2,8 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { execSync } from "node:child_process";
 import { consola } from "consola";
 import YAML from "yaml";
-import glob from "fast-glob";
+import { collectUsedBrowserApi } from "./parse-browser-api.js";
+import { readFilesInDir, readJsFilesInDir } from "./utils/readFiles.js";
 
 interface MetadataJson {
   examples: Array<{
@@ -69,36 +70,10 @@ function collectPackages(packageJson: any, files: Record<string, string>) {
   return packages;
 }
 
-async function readFilesInDir(dir: string): Promise<Record<string, string>> {
-  const files = await glob(`${dir}/**`, {
-    ignore: ["**/node_modules/**", "**/package.json"],
-  });
-  const result: Record<string, string> = {};
-  for (const file of files) {
-    result[file] = await readFile(file, "utf8");
-  }
-  return result;
-}
-
 async function collectApis(files: Record<string, string>) {
   const dirApis = new Set<string>();
   for (const textContent of Object.values(files)) {
-    const apis = new Set<string>();
-    [...textContent.matchAll(/(^|\s)((browser|chrome)\..*?)[\s(;]/gm)].forEach(
-      (match) => {
-        apis.add(
-          match[2]
-            // convert chrome APIs to be reported as browser
-            .replace("chrome", "browser")
-            // Remove any optional chaining from the API listing
-            .replace("?.", ".")
-            // Remove listeners for a cleaner API listing
-            .replace(".addListener", "")
-            // Trim any trailing dots
-            .replace(/\.$/, ""),
-        );
-      },
-    );
+    const apis = collectUsedBrowserApi(textContent);
     apis.forEach((api) => {
       dirApis.add(api);
       allApis.add(api);
@@ -141,9 +116,10 @@ for (const exampleDir of exampleDirs) {
 
   const frontmatter = extractFrontmatter(readmeText);
   const dirContent = await readFilesInDir(exampleDir);
+  const dirJsContent = await readJsFilesInDir(exampleDir);
   const packages = collectPackages(packageJson, dirContent);
   const permissions = collectPermissions(manifest);
-  const apis = await collectApis(dirContent);
+  const apis = await collectApis(dirJsContent);
   frontmatter.apis?.forEach((api: string) => {
     allApis.add(api);
     apis.push(api);

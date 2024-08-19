@@ -1,15 +1,15 @@
 export default defineBackground(() => {
   // See https://developer.chrome.com/docs/extensions/develop/concepts/activeTab#invoking-activeTab
-  const onClicked =
-    browser.action?.onClicked ?? browser.browserAction.onClicked;
-  onClicked.addListener(async (tab) => {
-    try {
-      const dataUrl = await browser.tabs.captureVisibleTab();
-      await downloadImage(dataUrl);
-    } catch (err) {
-      console.error("Cannot capture screenshot of current tab", tab, err);
-    }
-  });
+  (browser.action ?? browser.browserAction).onClicked.addListener(
+    async (tab) => {
+      try {
+        const dataUrl = await browser.tabs.captureVisibleTab();
+        await downloadImage(dataUrl);
+      } catch (err) {
+        console.error("Cannot capture screenshot of current tab", tab, err);
+      }
+    },
+  );
 });
 
 async function downloadImage(dataUrl: string): Promise<void> {
