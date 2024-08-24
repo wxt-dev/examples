@@ -1,5 +1,5 @@
 export default defineBackground(() => {
-  // After installing `@types/chrome` and adding it to your tsconfig's `types`
-  // array, you can use the `chrome` global with typescript.
-  console.log("Hello background!", { id: chrome.runtime.id });
+  // Keep using `browser` from WXT, but if you disable auto-imports, import it
+  // from `wxt/browser/chrome`, not `wxt/browser`
+  console.log("Hello background!", { id: browser.runtime.id });
 });
