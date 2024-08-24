@@ -1,0 +1,6 @@
+extension:
+  name: Vanilla I18n Example
+  description: Use the @wxt-dev/i18n to localize your extension
+popup:
+  title: Example Popup Title
+  hello: Hello $1!

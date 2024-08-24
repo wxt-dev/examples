@@ -317,6 +317,18 @@ importers:
         specifier: ^0.18.6
         version: 0.18.6
 
+  examples/wxt-i18n:
+    devDependencies:
+      '@wxt-dev/i18n':
+        specifier: ^0.1.0
+        version: 0.1.0(wxt@0.19.7)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.5.4
+      wxt:
+        specifier: ^0.19.7
+        version: 0.19.7
+
 packages:
 
   /@aklinker1/rollup-plugin-visualizer@5.12.0:
@@ -1988,6 +2000,20 @@ packages:
       webextension-polyfill: 0.10.0
     dev: false
 
+  /@wxt-dev/i18n@0.1.0(wxt@0.19.7):
+    resolution: {integrity: sha512-qK3S8iyKFnr1MO8eLFKW/ek5pYkMuXQTLEA944H34iR+9hBuvtPFQtzw5iAlu3idm1qKy2tf6j3X8D3pnM/RNA==}
+    peerDependencies:
+      wxt: '>=0.19.7'
+    peerDependenciesMeta:
+      wxt:
+        optional: true
+    dependencies:
+      chokidar: 3.6.0
+      confbox: 0.1.7
+      fast-glob: 3.3.2
+      wxt: 0.19.7
+    dev: true
+
   /@wxt-dev/module-react@1.0.0(vite@5.4.1)(wxt@0.18.6):
     resolution: {integrity: sha512-+xWUGQDW0e4WWskwDxZvJWk4hHSPh4Hne+sR3IPXgdGmw4ajtFGHtFajPyIHARcEnSljHCjuYhceQY7cIfYWLQ==}
     peerDependencies:
@@ -2310,7 +2336,7 @@ packages:
       ohash: 1.1.3
       pathe: 1.1.2
       perfect-debounce: 1.0.0
-      pkg-types: 1.1.1
+      pkg-types: 1.1.3
       rc9: 2.1.2
     dev: true
 
@@ -6395,7 +6421,7 @@ packages:
       dequal: 2.0.3
       esbuild: 0.19.12
       fast-glob: 3.3.2
-      filesize: 10.1.2
+      filesize: 10.1.4
       fs-extra: 11.2.0
       get-port: 7.1.0
       giget: 1.2.3
@@ -6416,8 +6442,8 @@ packages:
       picocolors: 1.0.1
       prompts: 2.4.2
       publish-browser-extension: 2.1.3
-      unimport: 3.7.2
-      vite: 5.3.4
+      unimport: 3.10.0
+      vite: 5.4.1
       vite-node: 1.6.0
       web-ext-run: 0.2.1
       webextension-polyfill: 0.10.0
@@ -6617,6 +6643,72 @@ packages:
 
   /wxt@0.19.5:
     resolution: {integrity: sha512-TxoYeu7fBQMhxOTUVexdesOMvUTNQRNUk2EPpYAD26bz6BqQCZva7tmCwtGvsjJ2sXiTpfTOADNHcRcpc78hvQ==}
+    hasBin: true
+    peerDependencies:
+      '@types/chrome': '*'
+    peerDependenciesMeta:
+      '@types/chrome':
+        optional: true
+    dependencies:
+      '@aklinker1/rollup-plugin-visualizer': 5.12.0
+      '@types/webextension-polyfill': 0.10.7
+      '@webext-core/fake-browser': 1.3.1
+      '@webext-core/isolated-element': 1.1.2
+      '@webext-core/match-patterns': 1.0.3
+      async-mutex: 0.5.0
+      c12: 1.11.1(magicast@0.3.4)
+      cac: 6.7.14
+      chokidar: 3.6.0
+      ci-info: 4.0.0
+      consola: 3.2.3
+      defu: 6.1.4
+      dequal: 2.0.3
+      esbuild: 0.23.0
+      execa: 9.3.1
+      fast-glob: 3.3.2
+      filesize: 10.1.4
+      fs-extra: 11.2.0
+      get-port: 7.1.0
+      giget: 1.2.3
+      hookable: 5.5.3
+      is-wsl: 3.1.0
+      jiti: 1.21.6
+      json5: 2.2.3
+      jszip: 3.10.1
+      linkedom: 0.18.4
+      magicast: 0.3.4
+      minimatch: 10.0.1
+      natural-compare: 1.4.0
+      normalize-path: 3.0.0
+      nypm: 0.3.9
+      ohash: 1.1.3
+      open: 10.1.0
+      ora: 8.0.1
+      picocolors: 1.0.1
+      prompts: 2.4.2
+      publish-browser-extension: 2.1.3
+      unimport: 3.10.0
+      vite: 5.4.1
+      vite-node: 2.0.5
+      web-ext-run: 0.2.1
+      webextension-polyfill: 0.12.0
+    transitivePeerDependencies:
+      - '@types/node'
+      - bufferutil
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - utf-8-validate
+    dev: true
+
+  /wxt@0.19.7:
+    resolution: {integrity: sha512-nAoEYodA6Tgc93m0C4H64rUZe3WpR8aIL04L3BbmEnLfAfaLARKIELHBCOTr0m+6maMsAlppKVvX9O7n0Lg2/Q==}
     hasBin: true
     peerDependencies:
       '@types/chrome': '*'
