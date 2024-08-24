@@ -236,9 +236,11 @@
     {
       "name": "TailwindCSS",
       "description": "Add TailwindCSS to your extension.",
-      "searchText": "TailwindCSS|Add TailwindCSS to your extension.|autoprefixer|postcss|tailwindcss",
+      "searchText": "TailwindCSS|Add TailwindCSS to your extension.|autoprefixer|postcss|tailwindcss|createShadowRootUi",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/tailwindcss",
-      "apis": [],
+      "apis": [
+        "createShadowRootUi"
+      ],
       "packages": [
         "autoprefixer",
         "postcss",
