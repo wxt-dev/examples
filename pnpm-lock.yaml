@@ -277,6 +277,15 @@ importers:
         specifier: ^0.18.6
         version: 0.18.7
 
+  examples/vanilla-i18n:
+    devDependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.5.4
+      wxt:
+        specifier: ^0.18.6
+        version: 0.18.15
+
   examples/vitest-unit-testing:
     devDependencies:
       typescript:
@@ -1887,7 +1896,7 @@ packages:
       '@vue/shared': 3.4.28
       estree-walker: 2.0.2
       magic-string: 0.30.10
-      postcss: 8.4.38
+      postcss: 8.4.41
       source-map-js: 1.2.0
 
   /@vue/compiler-ssr@3.4.28:
@@ -4677,14 +4686,6 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.1
       source-map-js: 1.2.0
-
-  /postcss@8.4.40:
-    resolution: {integrity: sha512-YF2kKIUzAofPMpfH6hOi2cGnv/HrUlfucspc7pDyvv7kGdqXrfj8SCl/t8owkEgKEuu8ZcRjSOxFxVLqwChZ2Q==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.0.1
-      source-map-js: 1.2.0
     dev: true
 
   /postcss@8.4.41:
@@ -4694,7 +4695,6 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.1
       source-map-js: 1.2.0
-    dev: true
 
   /prettier@3.3.2:
     resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
@@ -5849,7 +5849,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.38
+      postcss: 8.4.41
       rollup: 4.18.0
     optionalDependencies:
       fsevents: 2.3.3
@@ -5884,7 +5884,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.40
+      postcss: 8.4.41
       rollup: 4.18.0
     optionalDependencies:
       fsevents: 2.3.3

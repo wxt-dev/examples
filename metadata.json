@@ -262,6 +262,17 @@
       "permissions": []
     },
     {
+      "name": "Vanilla I18n",
+      "description": "Use the vanilla browser.i18n APIs to localize your extension.",
+      "searchText": "Vanilla I18n|Use the vanilla browser.i18n APIs to localize your extension.|browser.i18n.getMessage",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/vanilla-i18n",
+      "apis": [
+        "browser.i18n.getMessage"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Vitest Unit Testing",
       "description": "Setup unit tests and mock the browser APIs.",
       "searchText": "Vitest Unit Testing|Setup unit tests and mock the browser APIs.|vitest|browser.runtime.onInstalled",
@@ -327,6 +338,7 @@
     "browser.devtools.panels.elements",
     "browser.devtools.panels.elements.createSidebarPane",
     "browser.downloads.download",
+    "browser.i18n.getMessage",
     "browser.offscreen.closeDocument",
     "browser.offscreen.createDocument",
     "browser.runtime.connect",

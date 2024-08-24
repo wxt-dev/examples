@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Vanilla I18n Example"
+  },
+  "extDescription": {
+    "message": "Use the browser.i18n APIs to localize your extension"
+  },
+  "popupTitle": {
+    "message": "Example Popup Title"
+  },
+  "helloWorld": {
+    "message": "Hello $1!"
+  }
+}
