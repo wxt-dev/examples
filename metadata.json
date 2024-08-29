@@ -296,6 +296,28 @@
         "@wxt-dev/module-vue"
       ],
       "permissions": []
+    },
+    {
+      "name": "Web Worker Setup",
+      "description": "Show how to create web workers using Vite's built-in support.",
+      "searchText": "Web Worker Setup|Show how to create web workers using Vite's built-in support.|WebWorker",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/web-worker-setup",
+      "apis": [
+        "WebWorker"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
+      "name": "WXT I18n",
+      "description": "Use @wxt-dev/i18n to localize your extension.",
+      "searchText": "WXT I18n|Use @wxt-dev/i18n to localize your extension.|@wxt-dev/i18n",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/wxt-i18n",
+      "apis": [],
+      "packages": [
+        "@wxt-dev/i18n"
+      ],
+      "permissions": []
     }
   ],
   "allPackages": [
@@ -303,6 +325,7 @@
     "@playwright/test",
     "@types/chrome",
     "@webext-core/proxy-service",
+    "@wxt-dev/i18n",
     "@wxt-dev/module-react",
     "@wxt-dev/module-vue",
     "autoprefixer",
@@ -332,6 +355,7 @@
   ],
   "allApis": [
     "DOMParser",
+    "WebWorker",
     "browser.action.onClicked",
     "browser.browserAction.onClicked",
     "browser.devtools.panels.create",
