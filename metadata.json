@@ -313,6 +313,22 @@
       "permissions": []
     },
     {
+      "name": "Vue Storage Composable",
+      "description": "Create a composable for managing a value in storage.",
+      "searchText": "Vue Storage Composable|Create a composable for managing a value in storage.|@vueuse/core|vue|@wxt-dev/module-vue|wxt/storage|storage",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/vue-storage-composable",
+      "apis": [],
+      "packages": [
+        "@vueuse/core",
+        "vue",
+        "@wxt-dev/module-vue",
+        "wxt/storage"
+      ],
+      "permissions": [
+        "storage"
+      ]
+    },
+    {
       "name": "Web Worker Setup",
       "description": "Show how to create web workers using Vite's built-in support.",
       "searchText": "Web Worker Setup|Show how to create web workers using Vite's built-in support.|WebWorker",
@@ -339,6 +355,7 @@
     "@mantine/core",
     "@playwright/test",
     "@types/chrome",
+    "@vueuse/core",
     "@webext-core/proxy-service",
     "@wxt-dev/i18n",
     "@wxt-dev/module-react",

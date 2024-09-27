@@ -67,7 +67,7 @@ function collectPackages(packageJson: any, files: Record<string, string>) {
     });
   });
   packages.forEach((pkg) => allPackages.add(pkg));
-  return packages;
+  return [...new Set(packages)];
 }
 
 async function collectApis(files: Record<string, string>) {

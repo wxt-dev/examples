@@ -1,0 +1,26 @@
+{
+  "name": "vue-storage-composable",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "vue-tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@vueuse/core": "^11.1.0",
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "@wxt-dev/module-vue": "^1.0.0",
+    "typescript": "^5.4.5",
+    "vue-tsc": "^2.0.21",
+    "wxt": "^0.19.10"
+  }
+}
