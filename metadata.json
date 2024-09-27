@@ -234,6 +234,21 @@
       "permissions": []
     },
     {
+      "name": "Storybook",
+      "description": "Integrate Storybook with WXT to develop components.",
+      "searchText": "Storybook|Integrate Storybook with WXT to develop components.|react|react-dom|@wxt-dev/module-react|storybook|vite",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/storybook",
+      "apis": [],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react",
+        "storybook",
+        "vite"
+      ],
+      "permissions": []
+    },
+    {
       "name": "TailwindCSS",
       "description": "Add TailwindCSS to your extension.",
       "searchText": "TailwindCSS|Add TailwindCSS to your extension.|autoprefixer|postcss|tailwindcss|createShadowRootUi",
@@ -336,6 +351,7 @@
     "postcss-simple-vars",
     "react",
     "react-dom",
+    "storybook",
     "tailwindcss",
     "vite",
     "vitest",

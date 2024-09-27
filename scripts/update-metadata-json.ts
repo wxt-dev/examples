@@ -33,7 +33,7 @@ const ignoredPackages = new Set([
   "tslib",
   "@tsconfig/svelte",
 ]);
-const ignoredPackagePrefixes = ["@types"];
+const ignoredPackagePrefixes = ["@types", "@storybook", "@chromatic-com"];
 
 const includedBundleImports = ["wxt/storage"];
 
