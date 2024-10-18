@@ -1,5 +1,5 @@
 ---
-name: UI mount by browser action
+name: Mount UI On Browser Action Click
 description: Click on the extension to mount the UI on the web page.
 apis:
   - createShadowRootUi
