@@ -651,11 +651,6 @@ packages:
       '@babel/types': 7.25.2
     dev: true
 
-  /@babel/helper-string-parser@7.24.7:
-    resolution: {integrity: sha512-7MbVt6xrwFQbunH2DNQsAP5sTGxfqQtErvBIvIMi6EQnbgUOuVYanvREcmFrOPhoXBrTtjhhP+lW+o5UfK+tDg==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
   /@babel/helper-string-parser@7.24.8:
     resolution: {integrity: sha512-pO9KhhRcuUyGnJWwyEgnRJTSIZHiT+vMD0kPeD+so0l7mxkMT19g3pjY9GTnHySck/hDzq+dtW/4VgnMkippsQ==}
     engines: {node: '>=6.9.0'}
@@ -784,15 +779,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/types@7.24.7:
-    resolution: {integrity: sha512-XEFXSlxiG5td2EJRe8vOmRbaXVgfcBlszKujvVmWIK/UpywWljQCfzAv3RQCGujWQ1RD4YYWEAqDXfuJiy8f5Q==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.24.7
-      '@babel/helper-validator-identifier': 7.24.7
-      to-fast-properties: 2.0.0
     dev: true
 
   /@babel/types@7.25.2:
@@ -2364,8 +2350,8 @@ packages:
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
-      '@babel/parser': 7.24.7
-      '@babel/types': 7.24.7
+      '@babel/parser': 7.25.3
+      '@babel/types': 7.25.2
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.6
@@ -2913,6 +2899,18 @@ packages:
     resolution: {integrity: sha512-+xWUGQDW0e4WWskwDxZvJWk4hHSPh4Hne+sR3IPXgdGmw4ajtFGHtFajPyIHARcEnSljHCjuYhceQY7cIfYWLQ==}
     peerDependencies:
       wxt: '>=0.18.5'
+    dependencies:
+      '@vitejs/plugin-react': 4.3.1(vite@5.4.1)
+      wxt: 0.19.10
+    transitivePeerDependencies:
+      - supports-color
+      - vite
+    dev: true
+
+  /@wxt-dev/module-react@1.1.1(vite@5.4.1)(wxt@0.19.10):
+    resolution: {integrity: sha512-bRTHMogtT0AeyKkrHCHhfuPc8hZnbHMPAi9ynm9eRN+uH4IxSZ3rETI7qPz4dbJQua+2ci84/XyQXzw14X/1iA==}
+    peerDependencies:
+      wxt: '>=0.18.6'
     dependencies:
       '@vitejs/plugin-react': 4.3.1(vite@5.4.1)
       wxt: 0.19.10
@@ -7424,8 +7422,8 @@ packages:
       picocolors: 1.0.1
       sade: 1.8.1
       svelte: 4.2.19
-      svelte-preprocess: 5.1.4(svelte@4.2.19)(typescript@5.6.3)
-      typescript: 5.6.3
+      svelte-preprocess: 5.1.4(svelte@4.2.19)(typescript@5.6.2)
+      typescript: 5.6.2
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -7447,7 +7445,7 @@ packages:
       svelte: 4.2.19
     dev: true
 
-  /svelte-preprocess@5.1.4(svelte@4.2.19)(typescript@5.6.3):
+  /svelte-preprocess@5.1.4(svelte@4.2.19)(typescript@5.6.2):
     resolution: {integrity: sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==}
     engines: {node: '>= 16.0.0'}
     requiresBuild: true
@@ -7491,7 +7489,7 @@ packages:
       sorcery: 0.11.1
       strip-indent: 3.0.0
       svelte: 4.2.19
-      typescript: 5.6.3
+      typescript: 5.6.2
     dev: true
 
   /svelte@4.2.19:
@@ -7737,6 +7735,12 @@ packages:
     resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  /typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
 
   /typescript@5.6.3:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
