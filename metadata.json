@@ -62,6 +62,26 @@
       "permissions": []
     },
     {
+      "name": "Mount UI On Browser Action Click",
+      "description": "Click on the extension to mount the UI on the web page.",
+      "searchText": "Mount UI On Browser Action Click|Click on the extension to mount the UI on the web page.|react|react-dom|@wxt-dev/module-react|browser.runtime.id|browser.action.onClicked|browser.browserAction.onClicked|browser.tabs.sendMessage|browser.runtime.onMessage|createShadowRootUi",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/browser-action-mount-ui",
+      "apis": [
+        "browser.runtime.id",
+        "browser.action.onClicked",
+        "browser.browserAction.onClicked",
+        "browser.tabs.sendMessage",
+        "browser.runtime.onMessage",
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Content Script Session Storage",
       "description": "Setup and use session storage in content scripts.",
       "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|wxt/storage|storage|browser.storage.session.setAccessLevel|browser.storage.session",
