@@ -1,13 +1,13 @@
-import { defineConfig } from 'wxt';
+import { defineConfig } from "wxt";
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
-  modules: ['@wxt-dev/module-react'],
+  modules: ["@wxt-dev/module-react"],
   runner: {
-    startUrls:['https://www.google.com/']
+    startUrls: ["https://www.google.com/"],
   },
   manifest: {
     // Required, don't open popup, only action
     action: {},
-  }
+  },
 });

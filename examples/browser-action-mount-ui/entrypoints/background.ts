@@ -7,6 +7,6 @@ export default defineBackground(() => {
       if (tab.id) {
         await browser.tabs.sendMessage(tab.id, { type: "MOUNT_UI" });
       }
-    }
+    },
   );
 });
