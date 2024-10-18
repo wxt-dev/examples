@@ -267,12 +267,13 @@
     {
       "name": "Svelte Custom Store",
       "description": "A custom svelte store wrapper around wxt/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.",
-      "searchText": "Svelte Custom Store|A custom svelte store wrapper around wxt/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.|@wxt-dev/module-svelte|svelte|storage",
+      "searchText": "Svelte Custom Store|A custom svelte store wrapper around wxt/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.|@wxt-dev/module-svelte|svelte|wxt/storage|storage",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/svelte-custom-store",
       "apis": [],
       "packages": [
         "@wxt-dev/module-svelte",
-        "svelte"
+        "svelte",
+        "wxt/storage"
       ],
       "permissions": [
         "storage"
