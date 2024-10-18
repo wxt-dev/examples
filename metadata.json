@@ -1,6 +1,22 @@
 {
   "examples": [
     {
+      "name": "Active Tab Content Script",
+      "description": "Inject a content script only when clicking on the extension action.",
+      "searchText": "Active Tab Content Script|Inject a content script only when clicking on the extension action.|activeTab|scripting|browser.action.onClicked|browser.browserAction.onClicked|browser.scripting.executeScript",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/active-tab-content-script",
+      "apis": [
+        "browser.action.onClicked",
+        "browser.browserAction.onClicked",
+        "browser.scripting.executeScript"
+      ],
+      "packages": [],
+      "permissions": [
+        "activeTab",
+        "scripting"
+      ]
+    },
+    {
       "name": "Active Tab Screenshot",
       "description": "Use the activeTab permission to take a screenshot of the current tab",
       "searchText": "Active Tab Screenshot|Use the activeTab permission to take a screenshot of the current tab|activeTab|downloads|browser.action.onClicked|browser.browserAction.onClicked|browser.tabs.captureVisibleTab|browser.downloads.download",
@@ -43,6 +59,26 @@
         "browser.runtime.connect"
       ],
       "packages": [],
+      "permissions": []
+    },
+    {
+      "name": "UI mount by browser action",
+      "description": "Click on the extension to mount the UI on the web page.",
+      "searchText": "UI mount by browser action|Click on the extension to mount the UI on the web page.|react|react-dom|@wxt-dev/module-react|browser.runtime.id|browser.action.onClicked|browser.browserAction.onClicked|browser.tabs.sendMessage|browser.runtime.onMessage|createShadowRootUi",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/browser-action-mount-ui",
+      "apis": [
+        "browser.runtime.id",
+        "browser.action.onClicked",
+        "browser.browserAction.onClicked",
+        "browser.tabs.sendMessage",
+        "browser.runtime.onMessage",
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
+      ],
       "permissions": []
     },
     {
