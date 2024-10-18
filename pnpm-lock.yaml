@@ -87,30 +87,6 @@ importers:
         specifier: ^0.18.6
         version: 0.18.6
 
-  examples/custom-svelte-store:
-    devDependencies:
-      '@tsconfig/svelte':
-        specifier: ^5.0.4
-        version: 5.0.4
-      '@wxt-dev/module-svelte':
-        specifier: ^1.0.1
-        version: 1.0.1(svelte@4.2.19)(vite@5.4.1)(wxt@0.19.11)
-      svelte:
-        specifier: ^4.2.19
-        version: 4.2.19
-      svelte-check:
-        specifier: ^3.8.6
-        version: 3.8.6(svelte@4.2.19)
-      tslib:
-        specifier: ^2.7.0
-        version: 2.8.0
-      typescript:
-        specifier: ^5.6.2
-        version: 5.6.3
-      wxt:
-        specifier: ^0.19.11
-        version: 0.19.11
-
   examples/devtools-extension:
     devDependencies:
       typescript:
@@ -340,6 +316,30 @@ importers:
       wxt:
         specifier: ^0.19.10
         version: 0.19.10
+
+  examples/svelte-custom-store:
+    devDependencies:
+      '@tsconfig/svelte':
+        specifier: ^5.0.4
+        version: 5.0.4
+      '@wxt-dev/module-svelte':
+        specifier: ^1.0.1
+        version: 1.0.1(svelte@4.2.19)(vite@5.4.1)(wxt@0.19.11)
+      svelte:
+        specifier: ^4.2.19
+        version: 4.2.19
+      svelte-check:
+        specifier: ^3.8.6
+        version: 3.8.6(svelte@4.2.19)
+      tslib:
+        specifier: ^2.7.0
+        version: 2.8.0
+      typescript:
+        specifier: ^5.6.2
+        version: 5.6.3
+      wxt:
+        specifier: ^0.19.11
+        version: 0.19.11
 
   examples/tailwindcss:
     devDependencies:
@@ -8782,9 +8782,6 @@ packages:
   /wxt@0.19.10:
     resolution: {integrity: sha512-lX/dzAaau79SDsU7QZKUgxJUf9nBsaQXMiqsDNgGoqZO1wrRpFq0kijcN3/mNjGbXM989VJhEl7B6f3ttxKAnQ==}
     hasBin: true
-    peerDependenciesMeta:
-      '@types/chrome':
-        optional: true
     dependencies:
       '@aklinker1/rollup-plugin-visualizer': 5.12.0
       '@types/chrome': 0.0.269
@@ -8851,9 +8848,6 @@ packages:
   /wxt@0.19.11:
     resolution: {integrity: sha512-5SthX6H4jwM33VQQtNgLqZc7EzGV5ksz69omnI2kHYv22HfmVl4z7L1o0fgkl9XLyWyIz58nwf4YvQXGJWN5ig==}
     hasBin: true
-    peerDependenciesMeta:
-      '@types/chrome':
-        optional: true
     dependencies:
       '@aklinker1/rollup-plugin-visualizer': 5.12.0
       '@types/chrome': 0.0.269

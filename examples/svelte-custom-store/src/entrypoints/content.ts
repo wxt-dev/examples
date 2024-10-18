@@ -2,7 +2,7 @@ import { someProperty } from "@/lib/store";
 import { get } from "svelte/store";
 
 export default defineContentScript({
-  matches: ['*://*.example.org/*'],
+  matches: ["*://*.example.org/*"],
 
   // open example.org to see console output when toggling
 
