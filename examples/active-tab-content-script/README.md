@@ -1,6 +1,8 @@
 ---
 name: Active Tab Content Script
 description: Inject a content script only when clicking on the extension action.
+apis:
+  - createShadowRootUi
 ---
 
 ```sh

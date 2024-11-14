@@ -3,12 +3,13 @@
     {
       "name": "Active Tab Content Script",
       "description": "Inject a content script only when clicking on the extension action.",
-      "searchText": "Active Tab Content Script|Inject a content script only when clicking on the extension action.|activeTab|scripting|browser.action.onClicked|browser.browserAction.onClicked|browser.scripting.executeScript",
+      "searchText": "Active Tab Content Script|Inject a content script only when clicking on the extension action.|activeTab|scripting|browser.action.onClicked|browser.browserAction.onClicked|browser.scripting.executeScript|createShadowRootUi",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/active-tab-content-script",
       "apis": [
         "browser.action.onClicked",
         "browser.browserAction.onClicked",
-        "browser.scripting.executeScript"
+        "browser.scripting.executeScript",
+        "createShadowRootUi"
       ],
       "packages": [],
       "permissions": [
