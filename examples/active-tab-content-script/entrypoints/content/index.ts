@@ -1,12 +1,12 @@
-import { CONTENT_SCRIPT_MATCHES } from "@/utils/matches";
 import "./style.css";
 import { ContentScriptContext } from "wxt/client";
 
 export default defineContentScript({
   // Set "registration" to runtime so this file isn't listed in manifest
   registration: "runtime",
-  // URL patterns passed here are automatically added to "host_permissions"
-  matches: [CONTENT_SCRIPT_MATCHES],
+  // Use an empty array for matches to prevent any host_permissions be added
+  //  when using `registration: "runtime"`.
+  matches: [],
   // Put the CSS in the shadow root
   cssInjectionMode: "ui",
 
