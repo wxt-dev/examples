@@ -303,14 +303,13 @@
     {
       "name": "TailwindCSS",
       "description": "Add TailwindCSS to your extension.",
-      "searchText": "TailwindCSS|Add TailwindCSS to your extension.|autoprefixer|postcss|tailwindcss|createShadowRootUi",
+      "searchText": "TailwindCSS|Add TailwindCSS to your extension.|@tailwindcss/vite|tailwindcss|createShadowRootUi",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/tailwindcss",
       "apis": [
         "createShadowRootUi"
       ],
       "packages": [
-        "autoprefixer",
-        "postcss",
+        "@tailwindcss/vite",
         "tailwindcss"
       ],
       "permissions": []
@@ -406,6 +405,7 @@
   "allPackages": [
     "@mantine/core",
     "@playwright/test",
+    "@tailwindcss/vite",
     "@types/chrome",
     "@vueuse/core",
     "@webext-core/proxy-service",
@@ -413,7 +413,6 @@
     "@wxt-dev/module-react",
     "@wxt-dev/module-svelte",
     "@wxt-dev/module-vue",
-    "autoprefixer",
     "idb",
     "playwright",
     "postcss",
