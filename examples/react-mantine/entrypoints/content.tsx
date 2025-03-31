@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ContentScriptContext } from "wxt/client";
+import { ContentScriptContext } from "#imports";
 import Counter from "@/components/Counter";
 import { MantineProvider } from "@mantine/core";
 // Remember to import Mantine's styles

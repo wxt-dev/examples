@@ -6,7 +6,7 @@ export default defineConfig({
     permissions: ["activeTab", "downloads"],
     action: {},
   },
-  runner: {
+  webExt: {
     startUrls: ["https://wxt.dev"],
   },
 });

@@ -85,14 +85,14 @@
     {
       "name": "Content Script Session Storage",
       "description": "Setup and use session storage in content scripts.",
-      "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|wxt/storage|storage|browser.storage.session.setAccessLevel|browser.storage.session",
+      "searchText": "Content Script Session Storage|Setup and use session storage in content scripts.|wxt/utils/storage|storage|browser.storage.session.setAccessLevel|browser.storage.session",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/content-script-session-storage",
       "apis": [
         "browser.storage.session.setAccessLevel",
         "browser.storage.session"
       ],
       "packages": [
-        "wxt/storage"
+        "wxt/utils/storage"
       ],
       "permissions": [
         "storage"
@@ -177,12 +177,9 @@
     {
       "name": "Inject Script",
       "description": "Inject a script into a webpage.",
-      "searchText": "Inject Script|Inject a script into a webpage.|browser.runtime.getURL|browser.runtime.getManifest",
+      "searchText": "Inject Script|Inject a script into a webpage.",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/inject-script",
-      "apis": [
-        "browser.runtime.getURL",
-        "browser.runtime.getManifest"
-      ],
+      "apis": [],
       "packages": [],
       "permissions": []
     },
@@ -287,14 +284,14 @@
     },
     {
       "name": "Svelte Custom Store",
-      "description": "A custom svelte store wrapper around wxt/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.",
-      "searchText": "Svelte Custom Store|A custom svelte store wrapper around wxt/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.|@wxt-dev/module-svelte|svelte|wxt/storage|storage",
+      "description": "A custom svelte store wrapper around WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.",
+      "searchText": "Svelte Custom Store|A custom svelte store wrapper around WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.|@wxt-dev/module-svelte|svelte|wxt/utils/storage|storage",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/svelte-custom-store",
       "apis": [],
       "packages": [
         "@wxt-dev/module-svelte",
         "svelte",
-        "wxt/storage"
+        "wxt/utils/storage"
       ],
       "permissions": [
         "storage"
@@ -311,19 +308,6 @@
       "packages": [
         "@tailwindcss/vite",
         "tailwindcss"
-      ],
-      "permissions": []
-    },
-    {
-      "name": "Use Chrome",
-      "description": "Use the chrome global and disable the webextension-polyfill.",
-      "searchText": "Use Chrome|Use the chrome global and disable the webextension-polyfill.|@types/chrome|browser.runtime.id",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/use-chrome",
-      "apis": [
-        "browser.runtime.id"
-      ],
-      "packages": [
-        "@types/chrome"
       ],
       "permissions": []
     },
@@ -366,14 +350,14 @@
     {
       "name": "Vue Storage Composable",
       "description": "Create a composable for managing a value in storage.",
-      "searchText": "Vue Storage Composable|Create a composable for managing a value in storage.|@vueuse/core|vue|@wxt-dev/module-vue|wxt/storage|storage",
+      "searchText": "Vue Storage Composable|Create a composable for managing a value in storage.|@vueuse/core|vue|@wxt-dev/module-vue|wxt/utils/storage|storage",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/vue-storage-composable",
       "apis": [],
       "packages": [
         "@vueuse/core",
         "vue",
         "@wxt-dev/module-vue",
-        "wxt/storage"
+        "wxt/utils/storage"
       ],
       "permissions": [
         "storage"
@@ -406,7 +390,6 @@
     "@mantine/core",
     "@playwright/test",
     "@tailwindcss/vite",
-    "@types/chrome",
     "@vueuse/core",
     "@webext-core/proxy-service",
     "@wxt-dev/i18n",
@@ -428,7 +411,7 @@
     "vue",
     "webext-dynamic-content-scripts",
     "webext-permission-toggle",
-    "wxt/storage"
+    "wxt/utils/storage"
   ],
   "allPermissions": [
     "activeTab",
@@ -453,7 +436,6 @@
     "browser.offscreen.createDocument",
     "browser.runtime.connect",
     "browser.runtime.getContexts",
-    "browser.runtime.getManifest",
     "browser.runtime.getURL",
     "browser.runtime.id",
     "browser.runtime.onConnect",

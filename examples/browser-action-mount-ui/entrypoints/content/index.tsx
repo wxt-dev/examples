@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { createShadowRootUi } from "wxt/client";
+import { createShadowRootUi } from "#imports";
 import App from "./App.tsx";
 import "./style.css";
 

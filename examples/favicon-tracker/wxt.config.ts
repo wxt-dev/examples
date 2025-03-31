@@ -5,7 +5,7 @@ export default defineConfig({
   manifest: {
     permissions: ["tabs"],
   },
-  runner: {
+  webExt: {
     startUrls: [
       "https://google.com",
       "https://duckduckgo.com",
