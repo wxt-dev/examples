@@ -1,6 +1,6 @@
 ---
 name: Svelte Custom Store
-description: A custom svelte store wrapper around wxt/utils/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.
+description: A custom svelte store wrapper around WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.
 ---
 
 ```sh
