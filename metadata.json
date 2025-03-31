@@ -12,7 +12,10 @@
         "createShadowRootUi"
       ],
       "packages": [],
-      "permissions": ["activeTab", "scripting"]
+      "permissions": [
+        "activeTab",
+        "scripting"
+      ]
     },
     {
       "name": "Active Tab Screenshot",
@@ -26,7 +29,10 @@
         "browser.downloads.download"
       ],
       "packages": [],
-      "permissions": ["activeTab", "downloads"]
+      "permissions": [
+        "activeTab",
+        "downloads"
+      ]
     },
     {
       "name": "Background Message Forwarder",
@@ -69,7 +75,11 @@
         "browser.runtime.onMessage",
         "createShadowRootUi"
       ],
-      "packages": ["react", "react-dom", "@wxt-dev/module-react"],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
+      ],
       "permissions": []
     },
     {
@@ -81,8 +91,12 @@
         "browser.storage.session.setAccessLevel",
         "browser.storage.session"
       ],
-      "packages": ["wxt/utils/storage"],
-      "permissions": ["storage"]
+      "packages": [
+        "wxt/utils/storage"
+      ],
+      "permissions": [
+        "storage"
+      ]
     },
     {
       "name": "Devtools Extension",
@@ -102,20 +116,31 @@
       "description": "Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.",
       "searchText": "Dynamic Content Scripts|Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.|webext-dynamic-content-scripts|webext-permission-toggle|storage|scripting|activeTab|contextMenus|browser.runtime.id",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/dynamic-content-scripts",
-      "apis": ["browser.runtime.id"],
+      "apis": [
+        "browser.runtime.id"
+      ],
       "packages": [
         "webext-dynamic-content-scripts",
         "webext-permission-toggle"
       ],
-      "permissions": ["storage", "scripting", "activeTab", "contextMenus"]
+      "permissions": [
+        "storage",
+        "scripting",
+        "activeTab",
+        "contextMenus"
+      ]
     },
     {
       "name": "ESM Content Script UI",
       "description": "Pre-bundle a content script as ESM with code-splitting enabled, dynamically import it from a content script, and load a UI with scoped CSS.",
       "searchText": "ESM Content Script UI|Pre-bundle a content script as ESM with code-splitting enabled, dynamically import it from a content script, and load a UI with scoped CSS.|vite|browser.runtime.getURL",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/esm-content-script-ui",
-      "apis": ["browser.runtime.getURL"],
-      "packages": ["vite"],
+      "apis": [
+        "browser.runtime.getURL"
+      ],
+      "packages": [
+        "vite"
+      ],
       "permissions": []
     },
     {
@@ -123,9 +148,18 @@
       "description": "Track and save favicons for all the websites you've been to.",
       "searchText": "Favicon Tracker|Track and save favicons for all the websites you've been to.|@webext-core/proxy-service|idb|tabs|browser.tabs.onUpdated|browser.tabs.get|indexeddb",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/favicon-tracker",
-      "apis": ["browser.tabs.onUpdated", "browser.tabs.get", "indexeddb"],
-      "packages": ["@webext-core/proxy-service", "idb"],
-      "permissions": ["tabs"]
+      "apis": [
+        "browser.tabs.onUpdated",
+        "browser.tabs.get",
+        "indexeddb"
+      ],
+      "packages": [
+        "@webext-core/proxy-service",
+        "idb"
+      ],
+      "permissions": [
+        "tabs"
+      ]
     },
     {
       "name": "Get Started Page",
@@ -143,9 +177,9 @@
     {
       "name": "Inject Script",
       "description": "Inject a script into a webpage.",
-      "searchText": "Inject Script|Inject a script into a webpage.|browser.runtime.getURL|browser.runtime.getManifest",
+      "searchText": "Inject Script|Inject a script into a webpage.",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/inject-script",
-      "apis": ["browser.runtime.getURL", "browser.runtime.getManifest"],
+      "apis": [],
       "packages": [],
       "permissions": []
     },
@@ -167,24 +201,36 @@
         "DOMParser"
       ],
       "packages": [],
-      "permissions": ["offscreen", "activeTab"]
+      "permissions": [
+        "offscreen",
+        "activeTab"
+      ]
     },
     {
       "name": "Basic Offscreen Document Setup",
       "description": "Basic setup for using an offscreen document",
       "searchText": "Basic Offscreen Document Setup|Basic setup for using an offscreen document|offscreen|browser.offscreen.createDocument",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/offscreen-document-setup",
-      "apis": ["browser.offscreen.createDocument"],
+      "apis": [
+        "browser.offscreen.createDocument"
+      ],
       "packages": [],
-      "permissions": ["offscreen"]
+      "permissions": [
+        "offscreen"
+      ]
     },
     {
       "name": "Playwright E2e Testing",
       "description": "Setup end-to-end tests for an extension.",
       "searchText": "Playwright E2e Testing|Setup end-to-end tests for an extension.|@playwright/test|playwright|browser.runtime.id",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/playwright-e2e-testing",
-      "apis": ["browser.runtime.id"],
-      "packages": ["@playwright/test", "playwright"],
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "@playwright/test",
+        "playwright"
+      ],
       "permissions": []
     },
     {
@@ -192,8 +238,14 @@
       "description": "Basic example of using createShadowRootUi with React.",
       "searchText": "React Content Script UI|Basic example of using createShadowRootUi with React.|react|react-dom|@wxt-dev/module-react|createShadowRootUi",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-content-script-ui",
-      "apis": ["createShadowRootUi"],
-      "packages": ["react", "react-dom", "@wxt-dev/module-react"],
+      "apis": [
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
+      ],
       "permissions": []
     },
     {
@@ -201,7 +253,9 @@
       "description": "Add mantine to HTML pages and content scripts",
       "searchText": "React Mantine|Add mantine to HTML pages and content scripts|@mantine/core|react|react-dom|@wxt-dev/module-react|postcss|postcss-preset-mantine|postcss-simple-vars|browser.runtime.id",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-mantine",
-      "apis": ["browser.runtime.id"],
+      "apis": [
+        "browser.runtime.id"
+      ],
       "packages": [
         "@mantine/core",
         "react",
@@ -234,25 +288,27 @@
       "searchText": "Svelte Custom Store|A custom svelte store wrapper around wxt/utils/storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.|@wxt-dev/module-svelte|svelte|wxt/utils/storage|storage",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/svelte-custom-store",
       "apis": [],
-      "packages": ["@wxt-dev/module-svelte", "svelte", "wxt/utils/storage"],
-      "permissions": ["storage"]
+      "packages": [
+        "@wxt-dev/module-svelte",
+        "svelte",
+        "wxt/utils/storage"
+      ],
+      "permissions": [
+        "storage"
+      ]
     },
     {
       "name": "TailwindCSS",
       "description": "Add TailwindCSS to your extension.",
       "searchText": "TailwindCSS|Add TailwindCSS to your extension.|@tailwindcss/vite|tailwindcss|createShadowRootUi",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/tailwindcss",
-      "apis": ["createShadowRootUi"],
-      "packages": ["@tailwindcss/vite", "tailwindcss"],
-      "permissions": []
-    },
-    {
-      "name": "Use Chrome",
-      "description": "Use the chrome global and disable the webextension-polyfill.",
-      "searchText": "Use Chrome|Use the chrome global and disable the webextension-polyfill.|@types/chrome|browser.runtime.id",
-      "url": "https://github.com/wxt-dev/examples/tree/main/examples/use-chrome",
-      "apis": ["browser.runtime.id"],
-      "packages": ["@types/chrome"],
+      "apis": [
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "@tailwindcss/vite",
+        "tailwindcss"
+      ],
       "permissions": []
     },
     {
@@ -260,7 +316,9 @@
       "description": "Use the vanilla browser.i18n APIs to localize your extension.",
       "searchText": "Vanilla I18n|Use the vanilla browser.i18n APIs to localize your extension.|browser.i18n.getMessage",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/vanilla-i18n",
-      "apis": ["browser.i18n.getMessage"],
+      "apis": [
+        "browser.i18n.getMessage"
+      ],
       "packages": [],
       "permissions": []
     },
@@ -269,8 +327,12 @@
       "description": "Setup unit tests and mock the browser APIs.",
       "searchText": "Vitest Unit Testing|Setup unit tests and mock the browser APIs.|vitest|browser.runtime.onInstalled",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/vitest-unit-testing",
-      "apis": ["browser.runtime.onInstalled"],
-      "packages": ["vitest"],
+      "apis": [
+        "browser.runtime.onInstalled"
+      ],
+      "packages": [
+        "vitest"
+      ],
       "permissions": []
     },
     {
@@ -279,7 +341,10 @@
       "searchText": "Vue Overlay|Show a simple overlay in the top right corner of every website.|vue|@wxt-dev/module-vue",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/vue-overlay",
       "apis": [],
-      "packages": ["vue", "@wxt-dev/module-vue"],
+      "packages": [
+        "vue",
+        "@wxt-dev/module-vue"
+      ],
       "permissions": []
     },
     {
@@ -294,14 +359,18 @@
         "@wxt-dev/module-vue",
         "wxt/utils/storage"
       ],
-      "permissions": ["storage"]
+      "permissions": [
+        "storage"
+      ]
     },
     {
       "name": "Web Worker Setup",
       "description": "Show how to create web workers using Vite's built-in support.",
       "searchText": "Web Worker Setup|Show how to create web workers using Vite's built-in support.|WebWorker",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/web-worker-setup",
-      "apis": ["WebWorker"],
+      "apis": [
+        "WebWorker"
+      ],
       "packages": [],
       "permissions": []
     },
@@ -311,7 +380,9 @@
       "searchText": "WXT I18n|Use @wxt-dev/i18n to localize your extension.|@wxt-dev/i18n",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/wxt-i18n",
       "apis": [],
-      "packages": ["@wxt-dev/i18n"],
+      "packages": [
+        "@wxt-dev/i18n"
+      ],
       "permissions": []
     }
   ],
@@ -319,7 +390,6 @@
     "@mantine/core",
     "@playwright/test",
     "@tailwindcss/vite",
-    "@types/chrome",
     "@vueuse/core",
     "@webext-core/proxy-service",
     "@wxt-dev/i18n",
@@ -366,7 +436,6 @@
     "browser.offscreen.createDocument",
     "browser.runtime.connect",
     "browser.runtime.getContexts",
-    "browser.runtime.getManifest",
     "browser.runtime.getURL",
     "browser.runtime.id",
     "browser.runtime.onConnect",
