@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "packageManager": "pnpm@8.15.8",
+  "packageManager": "pnpm@10.7.0",
   "scripts": {
     "format": "prettier --write .",
     "test": "vitest",
