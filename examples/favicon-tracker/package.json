@@ -18,7 +18,7 @@
     "idb": "^8.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
+    "typescript": "^5.8.2",
     "wxt": "^0.20.0"
   }
 }
