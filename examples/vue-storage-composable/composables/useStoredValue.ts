@@ -1,6 +1,6 @@
 import { UseAsyncStateOptions, useAsyncState } from "@vueuse/core";
 import { computed, onMounted, onUnmounted } from "vue";
-import { storage, StorageItemKey } from "wxt/storage";
+import { storage, StorageItemKey } from "wxt/utils/storage";
 
 export default function <T>(
   key: StorageItemKey,

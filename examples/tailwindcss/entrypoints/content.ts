@@ -1,4 +1,4 @@
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 import "~/assets/tailwind.css";
 
 export default defineContentScript({
