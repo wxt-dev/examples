@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "composite": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        },
+        "noEmit": false,
+        "declaration": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "references": [
+        {
+            "path": "./tsconfig.json"
+        }
+    ]
+}
