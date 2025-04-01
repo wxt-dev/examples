@@ -268,6 +268,29 @@
       "permissions": []
     },
     {
+      "name": "React19 Starter Template With Shadcn and TailwindCSS4",
+      "description": "This template should help get you started developing with React + TailwindCSS + Shadcn in WXT.",
+      "searchText": "React19 Starter Template With Shadcn and TailwindCSS4|This template should help get you started developing with React + TailwindCSS + Shadcn in WXT.|@radix-ui/react-slot|@tailwindcss/vite|class-variance-authority|clsx|lucide-react|react|react-dom|tailwind-merge|tailwindcss|tw-animate-css|@wxt-dev/module-react|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-shadcn-tailwind-starter",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "@radix-ui/react-slot",
+        "@tailwindcss/vite",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "react",
+        "react-dom",
+        "tailwind-merge",
+        "tailwindcss",
+        "tw-animate-css",
+        "@wxt-dev/module-react"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Storybook",
       "description": "Integrate Storybook with WXT to develop components.",
       "searchText": "Storybook|Integrate Storybook with WXT to develop components.|react|react-dom|@wxt-dev/module-react|storybook|vite",
@@ -389,6 +412,7 @@
   "allPackages": [
     "@mantine/core",
     "@playwright/test",
+    "@radix-ui/react-slot",
     "@tailwindcss/vite",
     "@vueuse/core",
     "@webext-core/proxy-service",
@@ -396,7 +420,10 @@
     "@wxt-dev/module-react",
     "@wxt-dev/module-svelte",
     "@wxt-dev/module-vue",
+    "class-variance-authority",
+    "clsx",
     "idb",
+    "lucide-react",
     "playwright",
     "postcss",
     "postcss-preset-mantine",
@@ -405,7 +432,9 @@
     "react-dom",
     "storybook",
     "svelte",
+    "tailwind-merge",
     "tailwindcss",
+    "tw-animate-css",
     "vite",
     "vitest",
     "vue",
