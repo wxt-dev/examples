@@ -1,7 +1,7 @@
 {
-  "name": "wxt-react-starter",
-  "description": "manifest.json description",
-  "private": true,
+  "name": "react-content-ui-custom-font",
+  "description": "Custom font example for react content ui",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
