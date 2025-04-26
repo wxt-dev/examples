@@ -249,6 +249,22 @@
       "permissions": []
     },
     {
+      "name": "React Content Script UI Custom Font",
+      "description": "Basic example of using a custom ttf font in your react content ui.",
+      "searchText": "React Content Script UI Custom Font|Basic example of using a custom ttf font in your react content ui.|react|react-dom|@wxt-dev/module-react|browser.runtime.getURL|createShadowRootUi",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-content-ui-custom-font",
+      "apis": [
+        "browser.runtime.getURL",
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
+      ],
+      "permissions": []
+    },
+    {
       "name": "React Mantine",
       "description": "Add mantine to HTML pages and content scripts",
       "searchText": "React Mantine|Add mantine to HTML pages and content scripts|@mantine/core|react|react-dom|@wxt-dev/module-react|postcss|postcss-preset-mantine|postcss-simple-vars|browser.runtime.id",
