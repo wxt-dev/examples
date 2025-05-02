@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "typescript": "^5.8.2",
-    "wxt": "^0.20.0"
+    "wxt": "^0.20.5"
   },
   "dependencies": {
     "webext-dynamic-content-scripts": "^10.0.3",
