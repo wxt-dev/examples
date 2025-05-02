@@ -11,7 +11,7 @@ export default async (ctx: ContentScriptContext) => {
     "wxt/utils/content-script-ui/shadow-root"
   );
   const stylesText = await fetch(
-    browser.runtime.getURL("/content-scripts/esm/style.css"),
+    browser.runtime.getURL("/content-scripts/esm/content.css"),
   ).then((res) => res.text());
   const ui = await createShadowRootUi(ctx, {
     name: "esm-ui-example",
