@@ -5,25 +5,17 @@ declare const unknownResponsePre: HTMLPreElement;
 declare const longLivedMessageList: HTMLUListElement;
 
 sendHelloMessageBtn.onclick = async () => {
-  try {
-    const response = await browser.runtime.sendMessage({
-      type: "hello",
-      name: "Aaron",
-    });
-    helloResponsePre.textContent = JSON.stringify(response);
-  } catch (err: any) {
-    helloResponsePre.textContent = "ERROR: " + err.message;
-  }
+  const response = await browser.runtime.sendMessage({
+    type: "hello",
+    name: "Aaron",
+  });
+  helloResponsePre.textContent = JSON.stringify(response) || "(No response)";
 };
 
 sendUnknownMessageBtn.onclick = async () => {
-  try {
-    const response = await browser.runtime.sendMessage({ type: "unknown" });
-    console.log({ response });
-    unknownResponsePre.textContent = JSON.stringify(response);
-  } catch (err: any) {
-    unknownResponsePre.textContent = "ERROR: " + err.message;
-  }
+  const response = await browser.runtime.sendMessage({ type: "unknown" });
+  console.log({ response });
+  unknownResponsePre.textContent = JSON.stringify(response) || "(No response)";
 };
 
 const port = browser.runtime.connect();
