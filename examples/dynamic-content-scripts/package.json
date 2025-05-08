@@ -14,11 +14,11 @@
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
-    "typescript": "^5.8.2",
-    "wxt": "^0.20.5"
+    "typescript": "^5.8.3",
+    "wxt": "^0.20.6"
   },
   "dependencies": {
-    "webext-dynamic-content-scripts": "^10.0.3",
-    "webext-permission-toggle": "^5.0.1"
+    "webext-dynamic-content-scripts": "^10.0.4",
+    "webext-permission-toggle": "^5.1.0"
   }
 }

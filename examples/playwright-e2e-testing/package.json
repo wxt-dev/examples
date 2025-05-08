@@ -11,9 +11,9 @@
     "e2e": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.1",
-    "playwright": "^1.40.1",
-    "typescript": "^5.8.2",
-    "wxt": "^0.20.5"
+    "@playwright/test": "^1.52.0",
+    "playwright": "^1.52.0",
+    "typescript": "^5.8.3",
+    "wxt": "^0.20.6"
   }
 }

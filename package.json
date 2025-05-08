@@ -7,16 +7,16 @@
     "update-metadata": "tsx scripts/update-metadata-json.ts"
   },
   "devDependencies": {
-    "@babel/parser": "^7.25.3",
-    "@babel/traverse": "^7.25.3",
-    "@babel/types": "^7.25.2",
-    "@types/babel__traverse": "^7.20.6",
-    "consola": "^3.2.3",
-    "fast-glob": "^3.3.2",
-    "prettier": "^3.3.2",
-    "tsx": "^4.15.4",
-    "typescript": "^5.8.2",
+    "@babel/parser": "^7.27.2",
+    "@babel/traverse": "^7.27.1",
+    "@babel/types": "^7.27.1",
+    "@types/babel__traverse": "^7.20.7",
+    "consola": "^3.4.2",
+    "fast-glob": "^3.3.3",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
     "vitest": "3.1.2",
-    "yaml": "^2.4.5"
+    "yaml": "^2.7.1"
   }
 }
