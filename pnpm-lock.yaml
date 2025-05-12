@@ -283,12 +283,18 @@ importers:
 
   examples/react-shadcn:
     dependencies:
+      '@tailwindcss/vite':
+        specifier: ^4.1.4
+        version: 4.1.4(vite@6.3.3(@types/node@22.7.3)(jiti@2.4.2)(lightningcss@1.29.2)(sugarss@4.0.1(postcss@8.5.3))(tsx@4.15.4)(yaml@2.4.5))
       react:
         specifier: ^19.1.0
         version: 19.1.0
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      tailwindcss:
+        specifier: ^4.0.9
+        version: 4.1.4
     devDependencies:
       '@types/react':
         specifier: ^19.1.2

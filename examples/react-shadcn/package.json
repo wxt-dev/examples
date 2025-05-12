@@ -1,5 +1,5 @@
 {
-  "name": "wxt-react-starter",
+  "name": "react-shadcn",
   "description": "manifest.json description",
   "private": true,
   "version": "0.0.0",
@@ -15,8 +15,10 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "@types/react": "^19.1.2",
