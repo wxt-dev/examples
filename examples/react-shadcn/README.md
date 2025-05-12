@@ -49,7 +49,7 @@ This example demonstrates how to integrate React 19+, Tailwind CSS v4+, and shad
 
 4. **Configure Tailwind CSS in `wxt.config.ts`:**
 
-   In the official documentation, it will as you to modify `vite.config.ts`, however WXT acts as a wrapper around Vite, and it provides its own config file (`wxt.config.ts`) which is the one we should modify instead of vite config file since this is the one that will manage the build process. So we should update our wxt config file to include tailwind as vite plugin
+    To configure Tailwind CSS, modify `wxt.config.ts`. While official documentation says to change `vite.config.ts`, WXT configures Vite internally, so you need to update `wxt.config.ts` instead. This file manages the build process. To integrate Tailwind, add it as a Vite plugin within the wxt.config.ts file, as shown here:
 
    ```ts
    import { defineConfig } from "wxt";
@@ -97,7 +97,7 @@ This example demonstrates how to integrate React 19+, Tailwind CSS v4+, and shad
 
 7. **Install and Configure Shadcn UI:**
 
-   Integrating Shadcn UI requires a few extra steps. You can choose either the [manual installation](https://ui.shadcn.com/docs/installation/manual) or the [Vite installation](https://ui.shadcn.com/docs/installation/vite) method. You can choose either one, both of them have workarounds we need to do, however this guide will use the Vite installation method.
+   Integrating Shadcn UI requires a few extra steps. You can choose either the [manual installation](https://ui.shadcn.com/docs/installation/manual) or the [Vite installation](https://ui.shadcn.com/docs/installation/vite) method. Both of them have workarounds we need to do, however this guide will use the Vite installation method.
 
    You also need to decide whether to stick with WXT's default project structure or introduce a `src/` directory to separate source code from configuration files. WXT provides documentation on adding a `src/` directory [here](https://wxt.dev/guide/essentials/project-structure.html#adding-a-src-directory). This guide will continue without a `src/` directory for simplicity.
 
@@ -139,7 +139,7 @@ This example demonstrates how to integrate React 19+, Tailwind CSS v4+, and shad
 
 10. **Temporarily Add `vite.config.ts` (Workaround for Shadcn CLI):**
 
-    The Shadcn CLI relies on detecting a `vite.config.ts` file to identify which framework we are in. So before initializing the tool, we have to temporarily create a `vite.config.ts` file with the following content:
+    The Shadcn CLI relies on detecting a `vite.config.ts` file to identify which framework to use. So before initializing the tool, we have to temporarily create a `vite.config.ts` file with the following content:
 
     ```ts
     import path from "path";
