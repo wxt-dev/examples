@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reactLogo from "@/assets/react.svg";
 import wxtLogo from "/wxt.svg";
+import { Button } from "@/components/ui/button";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,13 +22,9 @@ function App() {
       </h1>
 
       <div className="bg-gray-100 p-4 rounded-md shadow-inner flex flex-col items-center">
-        {" "}
-        <button
-          onClick={() => setCount((count) => count + 1)}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        >
+        <Button onClick={() => setCount((count) => count + 1)}>
           Count is {count}
-        </button>
+        </Button>
         <p className="text-sm mt-2 text-gray-600 text-center">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
