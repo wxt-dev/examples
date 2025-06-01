@@ -112,6 +112,15 @@ importers:
         specifier: ^0.20.5
         version: 0.20.5(@types/node@22.7.3)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.1)(sugarss@4.0.1(postcss@8.5.3))(tsx@4.15.4)(yaml@2.4.5)
 
+  examples/devcontainers:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
+      wxt:
+        specifier: ^0.20.5
+        version: 0.20.5(@types/node@22.7.3)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.1)(sugarss@4.0.1(postcss@8.5.3))(tsx@4.15.4)(yaml@2.4.5)
+
   examples/devtools-extension:
     devDependencies:
       typescript:
