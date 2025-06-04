@@ -298,6 +298,24 @@
       ]
     },
     {
+      "name": "Svelte State Rune",
+      "description": "A uses a state rune with WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.",
+      "searchText": "Svelte State Rune|A uses a state rune with WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.|@wxt-dev/module-svelte|svelte|vite|storage|browser.storage.session.setAccessLevel|browser.storage.session",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/svelte-state-rune",
+      "apis": [
+        "browser.storage.session.setAccessLevel",
+        "browser.storage.session"
+      ],
+      "packages": [
+        "@wxt-dev/module-svelte",
+        "svelte",
+        "vite"
+      ],
+      "permissions": [
+        "storage"
+      ]
+    },
+    {
       "name": "TailwindCSS",
       "description": "Add TailwindCSS to your extension.",
       "searchText": "TailwindCSS|Add TailwindCSS to your extension.|@tailwindcss/vite|tailwindcss|createShadowRootUi",
