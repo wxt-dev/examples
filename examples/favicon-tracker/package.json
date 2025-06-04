@@ -14,11 +14,11 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@webext-core/proxy-service": "^1.2.0",
-    "idb": "^8.0.0"
+    "@webext-core/proxy-service": "^1.2.1",
+    "idb": "^8.0.3"
   },
   "devDependencies": {
     "typescript": "^5.8.2",
-    "wxt": "^0.20.5"
+    "wxt": "^0.20.0"
   }
 }

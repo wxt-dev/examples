@@ -14,13 +14,13 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@vueuse/core": "^11.1.0",
-    "vue": "^3.4.27"
+    "@vueuse/core": "^11.3.0",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@wxt-dev/module-vue": "^1.0.2",
+    "@wxt-dev/module-vue": "^1.0.0",
     "typescript": "^5.8.2",
     "vue-tsc": "^2.0.21",
-    "wxt": "^0.20.5"
+    "wxt": "^0.20.0"
   }
 }

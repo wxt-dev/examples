@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "typescript": "^5.8.2",
-    "vitest": "^3.1.2",
-    "wxt": "^0.20.5"
+    "vitest": "^1.6.0",
+    "wxt": "^0.20.0"
   }
 }
