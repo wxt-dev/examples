@@ -184,6 +184,22 @@
       "permissions": []
     },
     {
+      "name": "Turborepo Monorepo",
+      "description": "Example setup of a monorepo using Turborepo.",
+      "searchText": "Turborepo Monorepo|Example setup of a monorepo using Turborepo.|prettier|turbo|react|react-dom|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/monorepo-turbo",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "prettier",
+        "turbo",
+        "react",
+        "react-dom"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Parse DOM in an Offscreen Document",
       "description": "Use the DOMParser API in an offscreen document to process HTML snippets in the background.",
       "searchText": "Parse DOM in an Offscreen Document|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|browser.runtime.id|DOMParser",
@@ -435,11 +451,13 @@
     "postcss",
     "postcss-preset-mantine",
     "postcss-simple-vars",
+    "prettier",
     "react",
     "react-dom",
     "storybook",
     "svelte",
     "tailwindcss",
+    "turbo",
     "vite",
     "vitest",
     "vue",

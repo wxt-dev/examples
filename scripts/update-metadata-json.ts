@@ -5,6 +5,11 @@ import YAML from "yaml";
 import { collectUsedBrowserApi } from "./parse-browser-api.js";
 import { readFilesInDir, readJsFilesInDir } from "./utils/readFiles.js";
 
+/**
+ * List of package names to not run `pnpm build` for - usually these are repos that don't integrate with the PNPM monorepo this repo uses.
+ */
+const IGNORE_BUILD_EXAMPLES = ["monorepo-turbo"];
+
 interface MetadataJson {
   examples: Array<{
     name: string;
@@ -38,7 +43,10 @@ const ignoredPackagePrefixes = ["@types", "@storybook", "@chromatic-com"];
 const includedBundleImports = ["wxt/utils/storage"];
 
 consola.info("Building all extensions...");
-execSync(`pnpm -r build`);
+const ignoredExamplesFilter = IGNORE_BUILD_EXAMPLES.map(
+  (packageName) => `--filter \\!${packageName}`,
+).join(" ");
+execSync(`pnpm -r ${ignoredExamplesFilter} build`);
 
 consola.info("Processing examples...");
 const exampleDirs = (await readdir("examples")).map((dir) => `examples/${dir}`);
@@ -108,11 +116,16 @@ for (const exampleDir of exampleDirs) {
 
   const manifestPath = `${exampleDir}/.output/chrome-mv3/manifest.json`;
   const manifestText = await readFile(manifestPath, "utf8").catch(() => void 0);
+  let manifest: any;
   if (manifestText == null) {
-    consola.warn("Skipped, not found:", manifestPath);
-    continue;
+    consola.log(
+      "    - Manifest not found, no manifest metadata extracted:",
+      manifestPath,
+    );
+    manifest = {};
+  } else {
+    manifest = JSON.parse(manifestText);
   }
-  const manifest = JSON.parse(manifestText);
 
   const frontmatter = extractFrontmatter(readmeText);
   const dirContent = await readFilesInDir(exampleDir);
