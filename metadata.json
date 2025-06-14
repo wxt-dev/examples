@@ -99,6 +99,18 @@
       ]
     },
     {
+      "name": "Devcontainers",
+      "description": "WXT browser extension using Dev Containers.",
+      "searchText": "Devcontainers|WXT browser extension using Dev Containers.|browser.runtime.id|browser.runtime.getURL",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/devcontainers",
+      "apis": [
+        "browser.runtime.id",
+        "browser.runtime.getURL"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Devtools Extension",
       "description": "Create an extension that adds to the browser's devtools.",
       "searchText": "Devtools Extension|Create an extension that adds to the browser's devtools.|browser.devtools.panels.create|browser.devtools.panels.elements.createSidebarPane|browser.devtools.panels.elements",
