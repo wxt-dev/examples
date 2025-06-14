@@ -1,3 +1,11 @@
+---
+name: Turborepo Monorepo
+description: Example setup of a monorepo using Turborepo.
+packages:
+- react
+- react-dom
+---
+
 # Turborepo starter
 
 This Turborepo starter is maintained by the Turborepo core team.
