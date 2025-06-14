@@ -17,8 +17,14 @@ Important steps:
 
 1. Export the fonts you want to use from Google Fonts using <https://gwfh.mranftl.com/fonts>
    - Set the folder prefix to `web-extension://__MSG_@@extension_id__/fonts/` and copy the CSS into `assets/fonts.css`
+      TODO: Add code link
    - Move the downloaded font files into the [`public/fonts` directory](public/fonts)
-
 2. Create `assets/style.css`. This file will contain the extension's base styles that all entrypoints will use. Make sure to import the `fonts.css` file:
+   TODO: Add code link
 3. In your HTML files, just link to the `style.css` file like normal:
+   TODO: Add code link
 4. In your content script entrypoint, import the `style.css`. If you're using `createShadowRootUi`, remember to set `cssInjectionMode: "ui"`, just like the [normal setup](https://wxt.dev/guide/essentials/content-scripts.html#shadow-root). There's nothing special here.
+   TODO: Add code link
+   TODO: Add code link
+
+And that's it! You can now use custom fonts in your extension, wherever you want.
