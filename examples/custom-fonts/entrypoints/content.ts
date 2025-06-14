@@ -6,12 +6,12 @@ export default defineContentScript({
   cssInjectionMode: "ui",
 
   async main(ctx) {
-    const ui = await defineUi(ctx);
+    const ui = await createUi(ctx);
     ui.autoMount();
   },
 });
 
-function defineUi(ctx: ContentScriptContext) {
+function createUi(ctx: ContentScriptContext) {
   return createShadowRootUi(ctx, {
     name: "custom-font-example",
     position: "overlay",
