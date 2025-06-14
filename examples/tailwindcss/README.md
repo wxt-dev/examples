@@ -5,7 +5,7 @@ apis:
   - createShadowRootUi
 ---
 
-Follow basic PostCSS installation: https://tailwindcss.com/docs/installation/using-postcss
+Follow "Using Vite" installation: https://tailwindcss.com/docs/installation/using-vite
 
 ```sh
 pnpm i

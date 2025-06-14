@@ -1,5 +1,5 @@
 import "./style.css";
-import { ContentScriptContext } from "wxt/client";
+import { ContentScriptContext } from "#imports";
 
 export default defineContentScript({
   // Set "registration" to runtime so this file isn't listed in manifest

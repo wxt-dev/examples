@@ -35,7 +35,7 @@ const ignoredPackages = new Set([
 ]);
 const ignoredPackagePrefixes = ["@types", "@storybook", "@chromatic-com"];
 
-const includedBundleImports = ["wxt/storage"];
+const includedBundleImports = ["wxt/utils/storage"];
 
 consola.info("Building all extensions...");
 execSync(`pnpm -r build`);

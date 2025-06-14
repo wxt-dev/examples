@@ -1,4 +1,4 @@
-import { ContentScriptContext } from "wxt/client";
+import { ContentScriptContext } from "#imports";
 import App from "./App.vue";
 import { createApp } from "vue";
 import "./reset.css";

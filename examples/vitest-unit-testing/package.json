@@ -11,8 +11,8 @@
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0",
-    "wxt": "^0.18.6"
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.2",
+    "wxt": "^0.20.5"
   }
 }

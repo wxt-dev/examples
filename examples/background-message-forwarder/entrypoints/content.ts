@@ -1,9 +1,10 @@
 export default defineContentScript({
   matches: ["*://*/*"],
   main() {
-    browser.runtime.onMessage.addListener(async (message) => {
-      console.log("Content script recieved message:", message);
-      return Math.random();
+    browser.runtime.onMessage.addListener((message, _, sendResponse) => {
+      console.log("Content script received message:", message);
+      sendResponse(Math.random());
+      return true;
     });
   },
 });

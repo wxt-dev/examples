@@ -5,7 +5,7 @@ export default defineConfig({
   manifest: {
     permissions: ["storage"],
   },
-  runner: {
+  webExt: {
     startUrls: ["https://duckduckgo.com/"],
   },
 });

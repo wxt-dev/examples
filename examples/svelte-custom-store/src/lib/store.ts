@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { StorageItemKey } from "wxt/storage";
+import type { StorageItemKey } from "wxt/utils/storage";
 
 // In theory, it should be possible to remove the storageItem.watch call
 // and only listen to changes in the svelte store,

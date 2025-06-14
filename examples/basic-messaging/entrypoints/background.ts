@@ -1,18 +1,17 @@
-import { Runtime } from "wxt/browser";
+import { Browser } from "wxt/browser";
 
 export default defineBackground(() => {
   // Setup listener for one-time messages
-  browser.runtime.onMessage.addListener((message) => {
+  browser.runtime.onMessage.addListener((message, _, sendResponse) => {
     // Only respond to hello messages
-    if (message.type === "hello")
-      // Returning a promise will send a response back to the sender
-      return Promise.resolve(`Hello ${message.name}, this is the background!`);
-
-    throw Error("Unknown message");
+    if (message.type === "hello") {
+      sendResponse(`Hello ${message.name}, this is the background!`);
+      return true;
+    }
   });
 
   // Setup broadcast channel to send messages to all connected ports
-  let ports: Runtime.Port[] = [];
+  let ports: Browser.runtime.Port[] = [];
   setInterval(() => {
     const message = { date: Date.now(), value: Math.random() };
     ports.forEach((port) => port.postMessage(message));
