@@ -1,5 +1,5 @@
 {
-  "name": "background-message-forwarder",
+  "name": "svelte-state-rune",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,11 +10,17 @@
     "build:firefox": "wxt build -b firefox",
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
-    "compile": "tsc --noEmit",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
+    "@tsconfig/svelte": "^5.0.4",
+    "@wxt-dev/module-svelte": "^2.0.3",
+    "svelte": "^5.28.2",
+    "svelte-check": "^4.1.6",
+    "tslib": "^2.7.0",
     "typescript": "^5.8.2",
+    "vite": "6.3.3",
     "wxt": "^0.20.5"
   }
 }

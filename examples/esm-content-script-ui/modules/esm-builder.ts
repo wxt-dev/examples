@@ -12,6 +12,9 @@ export default defineWxtModule((wxt) => {
   const buildEsmContentScript = async () => {
     wxt.logger.info("`[esm-builder]` Building `content/esm-index`...");
     const prebuildConfig: InlineConfig = {
+      esbuild: {
+        footer: "",
+      },
       build: {
         lib: {
           entry: resolve(wxt.config.entrypointsDir, "content/esm-index.ts"),
@@ -29,6 +32,7 @@ export default defineWxtModule((wxt) => {
       },
     };
     const finalConfig = mergeConfig(baseViteConfig, prebuildConfig);
+    console.log(JSON.stringify(finalConfig, null, 2));
     await build(finalConfig);
     wxt.logger.success("`[esm-builder]` Done!");
   };
@@ -78,7 +82,7 @@ export default defineWxtModule((wxt) => {
   wxt.hooks.hook("prepare:publicPaths", (_, paths) => {
     paths.push(
       "content-scripts/esm/content.js",
-      "content-scripts/esm/style.css",
+      "content-scripts/esm/content.css",
     );
   });
 });
