@@ -1,0 +1,9 @@
+@import url("./fonts.css");
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-overpass {
+  font-family: "Overpass", sans-serif;
+}
