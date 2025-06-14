@@ -6,7 +6,7 @@
   font-family: "Overpass";
   font-style: normal;
   font-weight: 400;
-  src: url("chrome-extension://__MSG_@@extension_id__/fonts/overpass-v18-latin-regular.woff2")
+  src: url("wxt-extension://__MSG_@@extension_id__/fonts/overpass-v18-latin-regular.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
@@ -16,6 +16,6 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
-  src: url("chrome-extension://__MSG_@@extension_id__/fonts/poppins-v23-latin-regular.woff2")
+  src: url("wxt-extension://__MSG_@@extension_id__/fonts/poppins-v23-latin-regular.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
