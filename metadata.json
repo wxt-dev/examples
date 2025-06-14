@@ -99,6 +99,17 @@
       ]
     },
     {
+      "name": "Devcontainers",
+      "description": "WXT browser extension using Dev Containers.",
+      "searchText": "Devcontainers|WXT browser extension using Dev Containers.|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/devcontainers",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Devtools Extension",
       "description": "Create an extension that adds to the browser's devtools.",
       "searchText": "Devtools Extension|Create an extension that adds to the browser's devtools.|browser.devtools.panels.create|browser.devtools.panels.elements.createSidebarPane|browser.devtools.panels.elements",
@@ -184,6 +195,22 @@
       "permissions": []
     },
     {
+      "name": "Turborepo Monorepo",
+      "description": "Example setup of a monorepo using Turborepo.",
+      "searchText": "Turborepo Monorepo|Example setup of a monorepo using Turborepo.|prettier|turbo|react|react-dom|browser.runtime.id",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/monorepo-turbo",
+      "apis": [
+        "browser.runtime.id"
+      ],
+      "packages": [
+        "prettier",
+        "turbo",
+        "react",
+        "react-dom"
+      ],
+      "permissions": []
+    },
+    {
       "name": "Parse DOM in an Offscreen Document",
       "description": "Use the DOMParser API in an offscreen document to process HTML snippets in the background.",
       "searchText": "Parse DOM in an Offscreen Document|Use the DOMParser API in an offscreen document to process HTML snippets in the background.|offscreen|activeTab|browser.action.onClicked|browser.scripting.executeScript|browser.runtime.onMessage|browser.runtime.sendMessage|browser.offscreen.createDocument|browser.runtime.getURL|browser.offscreen.closeDocument|browser.runtime.getContexts|browser.runtime.id|DOMParser",
@@ -239,6 +266,22 @@
       "searchText": "React Content Script UI|Basic example of using createShadowRootUi with React.|react|react-dom|@wxt-dev/module-react|createShadowRootUi",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-content-script-ui",
       "apis": [
+        "createShadowRootUi"
+      ],
+      "packages": [
+        "react",
+        "react-dom",
+        "@wxt-dev/module-react"
+      ],
+      "permissions": []
+    },
+    {
+      "name": "React Content Script UI Custom Font",
+      "description": "Basic example of using a custom ttf font in your react content ui.",
+      "searchText": "React Content Script UI Custom Font|Basic example of using a custom ttf font in your react content ui.|react|react-dom|@wxt-dev/module-react|browser.runtime.getURL|createShadowRootUi",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/react-content-ui-custom-font",
+      "apis": [
+        "browser.runtime.getURL",
         "createShadowRootUi"
       ],
       "packages": [
@@ -444,12 +487,14 @@
     "postcss",
     "postcss-preset-mantine",
     "postcss-simple-vars",
+    "prettier",
     "react",
     "react-dom",
     "storybook",
     "svelte",
     "tailwind-merge",
     "tailwindcss",
+    "turbo",
     "tw-animate-css",
     "vite",
     "vitest",
