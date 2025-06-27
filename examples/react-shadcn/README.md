@@ -163,7 +163,7 @@ This example demonstrates how to integrate React 19+, Tailwind CSS v4+, and shad
     Run the Shadcn UI initialization command:
 
     ```sh
-    pnpm dlx shadcn-ui@latest init
+    pnpm dlx shadcn@latest init
     ```
 
     Answer the prompts in the CLI to configure Shadcn UI according to your preferences (color scheme, etc.).
@@ -177,7 +177,7 @@ This example demonstrates how to integrate React 19+, Tailwind CSS v4+, and shad
     You can now add Shadcn UI components using the CLI:
 
     ```sh
-    pnpm dlx shadcn-ui@latest add button
+    pnpm dlx shadcn@latest add button
     ```
 
     This will install the button component and its dependencies. Repeat this command for any other components you wish to use.
