@@ -1,5 +1,5 @@
 {
-  "name": "react-antd",
+  "name": "react-antd-tailwindcss",
   "description": "manifest.json description",
   "private": true,
   "version": "0.0.0",
@@ -16,18 +16,18 @@
   },
   "dependencies": {
     "@ant-design/cssinjs": "^2.0.1",
-    "@tailwindcss/vite": "^4.2.0",
+    "@tailwindcss/vite": "^4.2.1",
     "antd": "^6.0.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
-    "@types/node": "^25.3.0",
+    "@types/node": "^25.3.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@wxt-dev/module-react": "^1.1.5",
     "typescript": "^5.9.3",
-    "wxt": "^0.20.17"
+    "wxt": "^0.20.18"
   }
 }

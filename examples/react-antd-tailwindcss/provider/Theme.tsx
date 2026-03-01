@@ -3,16 +3,30 @@ import { StyleProvider } from "@ant-design/cssinjs";
 import { ConfigProvider } from "antd";
 import type { ReactNode } from "react";
 
-export const ThemeProvider = ({ children = null as ReactNode }) => (
-	<StyleProvider container={document.body} layer hashPriority="high">
-		<ConfigProvider
-			theme={{
-				token: {
-					colorPrimary: "#ff000a",
-				},
-			}}
-		>
-			{children}
-		</ConfigProvider>
-	</StyleProvider>
-);
+type ThemeProviderProps = {
+  children?: ReactNode;
+  cssContainer?: HTMLElement | ShadowRoot;
+};
+
+export const ThemeProvider = ({
+  children,
+  cssContainer,
+}: ThemeProviderProps) => {
+  const container =
+    cssContainer ??
+    (typeof document !== "undefined" ? document.head : undefined);
+
+  return (
+    <StyleProvider container={container} layer hashPriority="high">
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#ff000a",
+          },
+        }}
+      >
+        {children}
+      </ConfigProvider>
+    </StyleProvider>
+  );
+};
