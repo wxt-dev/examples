@@ -332,6 +332,35 @@
       "permissions": []
     },
     {
+      "name": "Side Panel",
+      "description": "Cross-browser side panel that works on both Chrome and Firefox",
+      "searchText": "Side Panel|Cross-browser side panel that works on both Chrome and Firefox|storage|tabs|sidePanel|storage|tabs|browser.sidePanel.setPanelBehavior|browser.browserAction.onClicked|browser.windows.getCurrent|browser.tabs.onActivated|browser.tabs.onUpdated|browser.tabs.query|browser.storage.local.get|browser.storage.local|browser.storage.local.set|browser.sidePanel|browser.sidebarAction|browser.tabs.query|browser.storage.local",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/side-panel",
+      "apis": [
+        "browser.sidePanel.setPanelBehavior",
+        "browser.browserAction.onClicked",
+        "browser.windows.getCurrent",
+        "browser.tabs.onActivated",
+        "browser.tabs.onUpdated",
+        "browser.tabs.query",
+        "browser.storage.local.get",
+        "browser.storage.local",
+        "browser.storage.local.set",
+        "browser.sidePanel",
+        "browser.sidebarAction",
+        "browser.tabs.query",
+        "browser.storage.local"
+      ],
+      "packages": [],
+      "permissions": [
+        "storage",
+        "tabs",
+        "sidePanel",
+        "storage",
+        "tabs"
+      ]
+    },
+    {
       "name": "Storybook",
       "description": "Integrate Storybook with WXT to develop components.",
       "searchText": "Storybook|Integrate Storybook with WXT to develop components.|react|react-dom|@wxt-dev/module-react|storybook|vite",
@@ -509,6 +538,7 @@
     "downloads",
     "offscreen",
     "scripting",
+    "sidePanel",
     "storage",
     "tabs"
   ],
@@ -533,14 +563,22 @@
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
     "browser.scripting.executeScript",
+    "browser.sidePanel",
+    "browser.sidePanel.setPanelBehavior",
+    "browser.sidebarAction",
+    "browser.storage.local",
+    "browser.storage.local.get",
+    "browser.storage.local.set",
     "browser.storage.session",
     "browser.storage.session.setAccessLevel",
     "browser.tabs.captureVisibleTab",
     "browser.tabs.create",
     "browser.tabs.get",
+    "browser.tabs.onActivated",
     "browser.tabs.onUpdated",
     "browser.tabs.query",
     "browser.tabs.sendMessage",
+    "browser.windows.getCurrent",
     "createShadowRootUi",
     "indexeddb"
   ]
