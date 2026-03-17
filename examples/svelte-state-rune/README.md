@@ -1,6 +1,6 @@
 ---
 name: Svelte State Rune
-description: A uses a state rune with WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.
+description: Uses a state rune with WXT's storage to enable clean subscriptions in Svelte (and TS) as well as persisting state.
 ---
 
 ```sh
