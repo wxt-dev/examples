@@ -5,7 +5,7 @@ Examples are available in the [`examples/` directory](./examples).
 To download and run a specific example locally:
 
 ```sh
-npx giget@latest gh:wxt-dev/examples examples/vue-overlay
+npx giget@latest gh:wxt-dev/examples/examples/vue-overlay vue-overlay
 cd vue-overlay
 ```
 
