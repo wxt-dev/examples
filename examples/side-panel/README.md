@@ -1,14 +1,6 @@
 ---
 name: Side Panel
 description: Cross-browser side panel that works on both Chrome and Firefox
-apis:
-  - browser.sidePanel
-  - browser.sidebarAction
-  - browser.tabs.query
-  - browser.storage.local
-permissions:
-  - storage
-  - tabs
 ---
 
 ```sh

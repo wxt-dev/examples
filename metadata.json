@@ -334,7 +334,7 @@
     {
       "name": "Side Panel",
       "description": "Cross-browser side panel that works on both Chrome and Firefox",
-      "searchText": "Side Panel|Cross-browser side panel that works on both Chrome and Firefox|storage|tabs|sidePanel|storage|tabs|browser.sidePanel.setPanelBehavior|browser.browserAction.onClicked|browser.windows.getCurrent|browser.tabs.onActivated|browser.tabs.onUpdated|browser.tabs.query|browser.storage.local.get|browser.storage.local|browser.storage.local.set|browser.sidePanel|browser.sidebarAction|browser.tabs.query|browser.storage.local",
+      "searchText": "Side Panel|Cross-browser side panel that works on both Chrome and Firefox|storage|tabs|sidePanel|browser.sidePanel.setPanelBehavior|browser.browserAction.onClicked|browser.windows.getCurrent|browser.tabs.onActivated|browser.tabs.onUpdated|browser.tabs.query|browser.storage.local.get|browser.storage.local|browser.storage.local.set",
       "url": "https://github.com/wxt-dev/examples/tree/main/examples/side-panel",
       "apis": [
         "browser.sidePanel.setPanelBehavior",
@@ -345,19 +345,13 @@
         "browser.tabs.query",
         "browser.storage.local.get",
         "browser.storage.local",
-        "browser.storage.local.set",
-        "browser.sidePanel",
-        "browser.sidebarAction",
-        "browser.tabs.query",
-        "browser.storage.local"
+        "browser.storage.local.set"
       ],
       "packages": [],
       "permissions": [
         "storage",
         "tabs",
-        "sidePanel",
-        "storage",
-        "tabs"
+        "sidePanel"
       ]
     },
     {
@@ -563,9 +557,7 @@
     "browser.runtime.onMessage",
     "browser.runtime.sendMessage",
     "browser.scripting.executeScript",
-    "browser.sidePanel",
     "browser.sidePanel.setPanelBehavior",
-    "browser.sidebarAction",
     "browser.storage.local",
     "browser.storage.local.get",
     "browser.storage.local.set",
