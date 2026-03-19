@@ -123,6 +123,15 @@
       "permissions": []
     },
     {
+      "name": "Dual Firefox Action",
+      "description": "How to include both a browser_action and page_action for Firefox MV2 extensions.",
+      "searchText": "Dual Firefox Action|How to include both a browser_action and page_action for Firefox MV2 extensions.",
+      "url": "https://github.com/wxt-dev/examples/tree/main/examples/dual-firefox-action",
+      "apis": [],
+      "packages": [],
+      "permissions": []
+    },
+    {
       "name": "Dynamic Content Scripts",
       "description": "Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.",
       "searchText": "Dynamic Content Scripts|Use \"webext-dynamic-content-scripts\" and \"webext-permission-toggle\" to allow users to run content scripts on any page without requesting \"*://*/*\" on install.|webext-dynamic-content-scripts|webext-permission-toggle|storage|scripting|activeTab|contextMenus|browser.runtime.id",

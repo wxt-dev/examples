@@ -1,0 +1,17 @@
+{
+  "name": "dual-firefox-action",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:firefox": "wxt -b firefox",
+    "build:firefox": "wxt build -b firefox",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2",
+    "wxt": "^0.20.5"
+  }
+}

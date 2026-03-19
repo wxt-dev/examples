@@ -130,6 +130,15 @@ importers:
         specifier: ^0.20.5
         version: 0.20.5(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.40.1)(sugarss@4.0.1(postcss@8.5.8))(tsx@4.15.4)(yaml@2.4.5)
 
+  examples/dual-firefox-action:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.2
+        version: 5.9.3
+      wxt:
+        specifier: ^0.20.5
+        version: 0.20.20(@types/node@25.5.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.40.1)(sugarss@4.0.1(postcss@8.5.8))(tsx@4.15.4)(yaml@2.4.5)
+
   examples/dynamic-content-scripts:
     dependencies:
       webext-dynamic-content-scripts:
